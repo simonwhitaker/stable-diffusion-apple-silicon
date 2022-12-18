@@ -7,43 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4D75CDA294DCF2600DD9C54 /* merges.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD7294DCEE900DD9C54 /* merges.txt */; };
+		F4D75CDB294DCF2600DD9C54 /* SafetyChecker.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */; };
+		F4D75CDC294DCF2600DD9C54 /* TextEncoder.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */; };
+		F4D75CDD294DCF2600DD9C54 /* UnetChunk1.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD8294DCF0D00DD9C54 /* UnetChunk1.mlmodelc */; };
+		F4D75CDE294DCF2600DD9C54 /* VAEDecoder.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD5294DCED000DD9C54 /* VAEDecoder.mlmodelc */; };
+		F4D75CDF294DCF2600DD9C54 /* vocab.json in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD9294DCF0D00DD9C54 /* vocab.json */; };
+		F4D75CE1294DCF5A00DD9C54 /* UnetChunk2.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CE0294DCF2E00DD9C54 /* UnetChunk2.mlmodelc */; };
 		F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */; };
 		F4E282452949FAA00086532F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
 		F4E282472949FAA10086532F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282462949FAA10086532F /* Assets.xcassets */; };
 		F4E2824A2949FAA10086532F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282492949FAA10086532F /* Preview Assets.xcassets */; };
-		F4E282542949FAA10086532F /* StableDiffusionDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282532949FAA10086532F /* StableDiffusionDemoTests.swift */; };
-		F4E2825E2949FAA10086532F /* StableDiffusionDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2825D2949FAA10086532F /* StableDiffusionDemoUITests.swift */; };
-		F4E282602949FAA10086532F /* StableDiffusionDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2825F2949FAA10086532F /* StableDiffusionDemoUITestsLaunchTests.swift */; };
+		F4E2827A2949FAC30086532F /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2826E2949FAC30086532F /* Random.swift */; };
+		F4E2827B2949FAC30086532F /* TextEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2826F2949FAC30086532F /* TextEncoder.swift */; };
+		F4E2827C2949FAC30086532F /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282702949FAC30086532F /* Decoder.swift */; };
+		F4E2827D2949FAC30086532F /* SafetyChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282712949FAC30086532F /* SafetyChecker.swift */; };
+		F4E2827E2949FAC30086532F /* Unet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282722949FAC30086532F /* Unet.swift */; };
+		F4E2827F2949FAC30086532F /* SampleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282732949FAC30086532F /* SampleTimer.swift */; };
+		F4E282802949FAC30086532F /* StableDiffusionPipeline+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282742949FAC30086532F /* StableDiffusionPipeline+Resources.swift */; };
+		F4E282812949FAC30086532F /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282752949FAC30086532F /* Scheduler.swift */; };
+		F4E282822949FAC30086532F /* StableDiffusionPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282762949FAC30086532F /* StableDiffusionPipeline.swift */; };
+		F4E282832949FAC30086532F /* BPETokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282782949FAC30086532F /* BPETokenizer.swift */; };
+		F4E282842949FAC30086532F /* BPETokenizer+Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282792949FAC30086532F /* BPETokenizer+Reading.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F4E282502949FAA10086532F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4E282372949FA9F0086532F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4E2823E2949FA9F0086532F;
-			remoteInfo = StableDiffusionDemo;
-		};
-		F4E2825A2949FAA10086532F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4E282372949FA9F0086532F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4E2823E2949FA9F0086532F;
-			remoteInfo = StableDiffusionDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TextEncoder.mlmodelc; sourceTree = "<group>"; };
+		F4D75CD5294DCED000DD9C54 /* VAEDecoder.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = VAEDecoder.mlmodelc; sourceTree = "<group>"; };
+		F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SafetyChecker.mlmodelc; sourceTree = "<group>"; };
+		F4D75CD7294DCEE900DD9C54 /* merges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = merges.txt; sourceTree = "<group>"; };
+		F4D75CD8294DCF0D00DD9C54 /* UnetChunk1.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnetChunk1.mlmodelc; sourceTree = "<group>"; };
+		F4D75CD9294DCF0D00DD9C54 /* vocab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocab.json; sourceTree = "<group>"; };
+		F4D75CE0294DCF2E00DD9C54 /* UnetChunk2.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnetChunk2.mlmodelc; sourceTree = "<group>"; };
 		F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoApp.swift; sourceTree = "<group>"; };
 		F4E282442949FAA00086532F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4E282462949FAA10086532F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E282492949FAA10086532F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F4E2824F2949FAA10086532F /* StableDiffusionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StableDiffusionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4E282532949FAA10086532F /* StableDiffusionDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoTests.swift; sourceTree = "<group>"; };
-		F4E282592949FAA10086532F /* StableDiffusionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StableDiffusionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4E2825D2949FAA10086532F /* StableDiffusionDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoUITests.swift; sourceTree = "<group>"; };
-		F4E2825F2949FAA10086532F /* StableDiffusionDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4E2826E2949FAC30086532F /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		F4E2826F2949FAC30086532F /* TextEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEncoder.swift; sourceTree = "<group>"; };
+		F4E282702949FAC30086532F /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		F4E282712949FAC30086532F /* SafetyChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafetyChecker.swift; sourceTree = "<group>"; };
+		F4E282722949FAC30086532F /* Unet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unet.swift; sourceTree = "<group>"; };
+		F4E282732949FAC30086532F /* SampleTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTimer.swift; sourceTree = "<group>"; };
+		F4E282742949FAC30086532F /* StableDiffusionPipeline+Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StableDiffusionPipeline+Resources.swift"; sourceTree = "<group>"; };
+		F4E282752949FAC30086532F /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		F4E282762949FAC30086532F /* StableDiffusionPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StableDiffusionPipeline.swift; sourceTree = "<group>"; };
+		F4E282782949FAC30086532F /* BPETokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPETokenizer.swift; sourceTree = "<group>"; };
+		F4E282792949FAC30086532F /* BPETokenizer+Reading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BPETokenizer+Reading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,29 +65,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4E2824C2949FAA10086532F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4E282562949FAA10086532F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4D75CD3294DC8E700DD9C54 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F4D75CD7294DCEE900DD9C54 /* merges.txt */,
+				F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */,
+				F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */,
+				F4D75CD8294DCF0D00DD9C54 /* UnetChunk1.mlmodelc */,
+				F4D75CE0294DCF2E00DD9C54 /* UnetChunk2.mlmodelc */,
+				F4D75CD5294DCED000DD9C54 /* VAEDecoder.mlmodelc */,
+				F4D75CD9294DCF0D00DD9C54 /* vocab.json */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		F4E282362949FA9F0086532F = {
 			isa = PBXGroup;
 			children = (
+				F4D75CD3294DC8E700DD9C54 /* models */,
 				F4E282412949FAA00086532F /* StableDiffusionDemo */,
-				F4E282522949FAA10086532F /* StableDiffusionDemoTests */,
-				F4E2825C2949FAA10086532F /* StableDiffusionDemoUITests */,
 				F4E282402949FAA00086532F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,8 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */,
-				F4E2824F2949FAA10086532F /* StableDiffusionDemoTests.xctest */,
-				F4E282592949FAA10086532F /* StableDiffusionDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +102,7 @@
 		F4E282412949FAA00086532F /* StableDiffusionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4E2826C2949FAC30086532F /* StableDiffusion */,
 				F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */,
 				F4E282442949FAA00086532F /* ContentView.swift */,
 				F4E282462949FAA10086532F /* Assets.xcassets */,
@@ -110,21 +119,38 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		F4E282522949FAA10086532F /* StableDiffusionDemoTests */ = {
+		F4E2826C2949FAC30086532F /* StableDiffusion */ = {
 			isa = PBXGroup;
 			children = (
-				F4E282532949FAA10086532F /* StableDiffusionDemoTests.swift */,
+				F4E2826D2949FAC30086532F /* pipeline */,
+				F4E282772949FAC30086532F /* tokenizer */,
 			);
-			path = StableDiffusionDemoTests;
+			path = StableDiffusion;
 			sourceTree = "<group>";
 		};
-		F4E2825C2949FAA10086532F /* StableDiffusionDemoUITests */ = {
+		F4E2826D2949FAC30086532F /* pipeline */ = {
 			isa = PBXGroup;
 			children = (
-				F4E2825D2949FAA10086532F /* StableDiffusionDemoUITests.swift */,
-				F4E2825F2949FAA10086532F /* StableDiffusionDemoUITestsLaunchTests.swift */,
+				F4E2826E2949FAC30086532F /* Random.swift */,
+				F4E2826F2949FAC30086532F /* TextEncoder.swift */,
+				F4E282702949FAC30086532F /* Decoder.swift */,
+				F4E282712949FAC30086532F /* SafetyChecker.swift */,
+				F4E282722949FAC30086532F /* Unet.swift */,
+				F4E282732949FAC30086532F /* SampleTimer.swift */,
+				F4E282742949FAC30086532F /* StableDiffusionPipeline+Resources.swift */,
+				F4E282752949FAC30086532F /* Scheduler.swift */,
+				F4E282762949FAC30086532F /* StableDiffusionPipeline.swift */,
 			);
-			path = StableDiffusionDemoUITests;
+			path = pipeline;
+			sourceTree = "<group>";
+		};
+		F4E282772949FAC30086532F /* tokenizer */ = {
+			isa = PBXGroup;
+			children = (
+				F4E282782949FAC30086532F /* BPETokenizer.swift */,
+				F4E282792949FAC30086532F /* BPETokenizer+Reading.swift */,
+			);
+			path = tokenizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,42 +173,6 @@
 			productReference = F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F4E2824E2949FAA10086532F /* StableDiffusionDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F4E282662949FAA10086532F /* Build configuration list for PBXNativeTarget "StableDiffusionDemoTests" */;
-			buildPhases = (
-				F4E2824B2949FAA10086532F /* Sources */,
-				F4E2824C2949FAA10086532F /* Frameworks */,
-				F4E2824D2949FAA10086532F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F4E282512949FAA10086532F /* PBXTargetDependency */,
-			);
-			name = StableDiffusionDemoTests;
-			productName = StableDiffusionDemoTests;
-			productReference = F4E2824F2949FAA10086532F /* StableDiffusionDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F4E282582949FAA10086532F /* StableDiffusionDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F4E282692949FAA10086532F /* Build configuration list for PBXNativeTarget "StableDiffusionDemoUITests" */;
-			buildPhases = (
-				F4E282552949FAA10086532F /* Sources */,
-				F4E282562949FAA10086532F /* Frameworks */,
-				F4E282572949FAA10086532F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F4E2825B2949FAA10086532F /* PBXTargetDependency */,
-			);
-			name = StableDiffusionDemoUITests;
-			productName = StableDiffusionDemoUITests;
-			productReference = F4E282592949FAA10086532F /* StableDiffusionDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,14 +185,6 @@
 				TargetAttributes = {
 					F4E2823E2949FA9F0086532F = {
 						CreatedOnToolsVersion = 14.2;
-					};
-					F4E2824E2949FAA10086532F = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = F4E2823E2949FA9F0086532F;
-					};
-					F4E282582949FAA10086532F = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = F4E2823E2949FA9F0086532F;
 					};
 				};
 			};
@@ -220,8 +202,6 @@
 			projectRoot = "";
 			targets = (
 				F4E2823E2949FA9F0086532F /* StableDiffusionDemo */,
-				F4E2824E2949FAA10086532F /* StableDiffusionDemoTests */,
-				F4E282582949FAA10086532F /* StableDiffusionDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -231,22 +211,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D75CE1294DCF5A00DD9C54 /* UnetChunk2.mlmodelc in Resources */,
+				F4D75CDA294DCF2600DD9C54 /* merges.txt in Resources */,
+				F4D75CDB294DCF2600DD9C54 /* SafetyChecker.mlmodelc in Resources */,
+				F4D75CDC294DCF2600DD9C54 /* TextEncoder.mlmodelc in Resources */,
+				F4D75CDD294DCF2600DD9C54 /* UnetChunk1.mlmodelc in Resources */,
+				F4D75CDE294DCF2600DD9C54 /* VAEDecoder.mlmodelc in Resources */,
+				F4D75CDF294DCF2600DD9C54 /* vocab.json in Resources */,
 				F4E2824A2949FAA10086532F /* Preview Assets.xcassets in Resources */,
 				F4E282472949FAA10086532F /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4E2824D2949FAA10086532F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4E282572949FAA10086532F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,42 +230,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4E2827E2949FAC30086532F /* Unet.swift in Sources */,
 				F4E282452949FAA00086532F /* ContentView.swift in Sources */,
+				F4E2827B2949FAC30086532F /* TextEncoder.swift in Sources */,
+				F4E282812949FAC30086532F /* Scheduler.swift in Sources */,
+				F4E282802949FAC30086532F /* StableDiffusionPipeline+Resources.swift in Sources */,
 				F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4E2824B2949FAA10086532F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4E282542949FAA10086532F /* StableDiffusionDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F4E282552949FAA10086532F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F4E282602949FAA10086532F /* StableDiffusionDemoUITestsLaunchTests.swift in Sources */,
-				F4E2825E2949FAA10086532F /* StableDiffusionDemoUITests.swift in Sources */,
+				F4E2827D2949FAC30086532F /* SafetyChecker.swift in Sources */,
+				F4E282842949FAC30086532F /* BPETokenizer+Reading.swift in Sources */,
+				F4E282832949FAC30086532F /* BPETokenizer.swift in Sources */,
+				F4E2827C2949FAC30086532F /* Decoder.swift in Sources */,
+				F4E2827A2949FAC30086532F /* Random.swift in Sources */,
+				F4E2827F2949FAC30086532F /* SampleTimer.swift in Sources */,
+				F4E282822949FAC30086532F /* StableDiffusionPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F4E282512949FAA10086532F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F4E2823E2949FA9F0086532F /* StableDiffusionDemo */;
-			targetProxy = F4E282502949FAA10086532F /* PBXContainerItemProxy */;
-		};
-		F4E2825B2949FAA10086532F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F4E2823E2949FA9F0086532F /* StableDiffusionDemo */;
-			targetProxy = F4E2825A2949FAA10086532F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F4E282612949FAA10086532F /* Debug */ = {
@@ -467,82 +421,6 @@
 			};
 			name = Release;
 		};
-		F4E282672949FAA10086532F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VW9QM42U4U;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StableDiffusionDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StableDiffusionDemo";
-			};
-			name = Debug;
-		};
-		F4E282682949FAA10086532F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VW9QM42U4U;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StableDiffusionDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StableDiffusionDemo";
-			};
-			name = Release;
-		};
-		F4E2826A2949FAA10086532F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VW9QM42U4U;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = StableDiffusionDemo;
-			};
-			name = Debug;
-		};
-		F4E2826B2949FAA10086532F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VW9QM42U4U;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = StableDiffusionDemo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,24 +438,6 @@
 			buildConfigurations = (
 				F4E282642949FAA10086532F /* Debug */,
 				F4E282652949FAA10086532F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F4E282662949FAA10086532F /* Build configuration list for PBXNativeTarget "StableDiffusionDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F4E282672949FAA10086532F /* Debug */,
-				F4E282682949FAA10086532F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F4E282692949FAA10086532F /* Build configuration list for PBXNativeTarget "StableDiffusionDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F4E2826A2949FAA10086532F /* Debug */,
-				F4E2826B2949FAA10086532F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
