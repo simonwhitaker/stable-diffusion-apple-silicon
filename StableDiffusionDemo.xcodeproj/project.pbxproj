@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4377893294FADAF000F81A8 /* StableDiffusion */; };
 		F4D75CDA294DCF2600DD9C54 /* merges.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD7294DCEE900DD9C54 /* merges.txt */; };
 		F4D75CDB294DCF2600DD9C54 /* SafetyChecker.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */; };
 		F4D75CDC294DCF2600DD9C54 /* TextEncoder.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */; };
@@ -18,17 +19,6 @@
 		F4E282452949FAA00086532F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
 		F4E282472949FAA10086532F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282462949FAA10086532F /* Assets.xcassets */; };
 		F4E2824A2949FAA10086532F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282492949FAA10086532F /* Preview Assets.xcassets */; };
-		F4E2827A2949FAC30086532F /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2826E2949FAC30086532F /* Random.swift */; };
-		F4E2827B2949FAC30086532F /* TextEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E2826F2949FAC30086532F /* TextEncoder.swift */; };
-		F4E2827C2949FAC30086532F /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282702949FAC30086532F /* Decoder.swift */; };
-		F4E2827D2949FAC30086532F /* SafetyChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282712949FAC30086532F /* SafetyChecker.swift */; };
-		F4E2827E2949FAC30086532F /* Unet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282722949FAC30086532F /* Unet.swift */; };
-		F4E2827F2949FAC30086532F /* SampleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282732949FAC30086532F /* SampleTimer.swift */; };
-		F4E282802949FAC30086532F /* StableDiffusionPipeline+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282742949FAC30086532F /* StableDiffusionPipeline+Resources.swift */; };
-		F4E282812949FAC30086532F /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282752949FAC30086532F /* Scheduler.swift */; };
-		F4E282822949FAC30086532F /* StableDiffusionPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282762949FAC30086532F /* StableDiffusionPipeline.swift */; };
-		F4E282832949FAC30086532F /* BPETokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282782949FAC30086532F /* BPETokenizer.swift */; };
-		F4E282842949FAC30086532F /* BPETokenizer+Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282792949FAC30086532F /* BPETokenizer+Reading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,17 +34,6 @@
 		F4E282442949FAA00086532F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4E282462949FAA10086532F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E282492949FAA10086532F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F4E2826E2949FAC30086532F /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
-		F4E2826F2949FAC30086532F /* TextEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextEncoder.swift; sourceTree = "<group>"; };
-		F4E282702949FAC30086532F /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
-		F4E282712949FAC30086532F /* SafetyChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafetyChecker.swift; sourceTree = "<group>"; };
-		F4E282722949FAC30086532F /* Unet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unet.swift; sourceTree = "<group>"; };
-		F4E282732949FAC30086532F /* SampleTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTimer.swift; sourceTree = "<group>"; };
-		F4E282742949FAC30086532F /* StableDiffusionPipeline+Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StableDiffusionPipeline+Resources.swift"; sourceTree = "<group>"; };
-		F4E282752949FAC30086532F /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
-		F4E282762949FAC30086532F /* StableDiffusionPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StableDiffusionPipeline.swift; sourceTree = "<group>"; };
-		F4E282782949FAC30086532F /* BPETokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPETokenizer.swift; sourceTree = "<group>"; };
-		F4E282792949FAC30086532F /* BPETokenizer+Reading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BPETokenizer+Reading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,7 +82,6 @@
 		F4E282412949FAA00086532F /* StableDiffusionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F4E2826C2949FAC30086532F /* StableDiffusion */,
 				F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */,
 				F4E282442949FAA00086532F /* ContentView.swift */,
 				F4E282462949FAA10086532F /* Assets.xcassets */,
@@ -117,40 +96,6 @@
 				F4E282492949FAA10086532F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		F4E2826C2949FAC30086532F /* StableDiffusion */ = {
-			isa = PBXGroup;
-			children = (
-				F4E2826D2949FAC30086532F /* pipeline */,
-				F4E282772949FAC30086532F /* tokenizer */,
-			);
-			path = StableDiffusion;
-			sourceTree = "<group>";
-		};
-		F4E2826D2949FAC30086532F /* pipeline */ = {
-			isa = PBXGroup;
-			children = (
-				F4E2826E2949FAC30086532F /* Random.swift */,
-				F4E2826F2949FAC30086532F /* TextEncoder.swift */,
-				F4E282702949FAC30086532F /* Decoder.swift */,
-				F4E282712949FAC30086532F /* SafetyChecker.swift */,
-				F4E282722949FAC30086532F /* Unet.swift */,
-				F4E282732949FAC30086532F /* SampleTimer.swift */,
-				F4E282742949FAC30086532F /* StableDiffusionPipeline+Resources.swift */,
-				F4E282752949FAC30086532F /* Scheduler.swift */,
-				F4E282762949FAC30086532F /* StableDiffusionPipeline.swift */,
-			);
-			path = pipeline;
-			sourceTree = "<group>";
-		};
-		F4E282772949FAC30086532F /* tokenizer */ = {
-			isa = PBXGroup;
-			children = (
-				F4E282782949FAC30086532F /* BPETokenizer.swift */,
-				F4E282792949FAC30086532F /* BPETokenizer+Reading.swift */,
-			);
-			path = tokenizer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +114,9 @@
 			dependencies = (
 			);
 			name = StableDiffusionDemo;
+			packageProductDependencies = (
+				F4377893294FADAF000F81A8 /* StableDiffusion */,
+			);
 			productName = StableDiffusionDemo;
 			productReference = F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +145,9 @@
 				Base,
 			);
 			mainGroup = F4E282362949FA9F0086532F;
+			packageReferences = (
+				F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
+			);
 			productRefGroup = F4E282402949FAA00086532F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,19 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4E2827E2949FAC30086532F /* Unet.swift in Sources */,
 				F4E282452949FAA00086532F /* ContentView.swift in Sources */,
-				F4E2827B2949FAC30086532F /* TextEncoder.swift in Sources */,
-				F4E282812949FAC30086532F /* Scheduler.swift in Sources */,
-				F4E282802949FAC30086532F /* StableDiffusionPipeline+Resources.swift in Sources */,
 				F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */,
-				F4E2827D2949FAC30086532F /* SafetyChecker.swift in Sources */,
-				F4E282842949FAC30086532F /* BPETokenizer+Reading.swift in Sources */,
-				F4E282832949FAC30086532F /* BPETokenizer.swift in Sources */,
-				F4E2827C2949FAC30086532F /* Decoder.swift in Sources */,
-				F4E2827A2949FAC30086532F /* Random.swift in Sources */,
-				F4E2827F2949FAC30086532F /* SampleTimer.swift in Sources */,
-				F4E282822949FAC30086532F /* StableDiffusionPipeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +383,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/ml-stable-diffusion";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4377893294FADAF000F81A8 /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F4E282372949FA9F0086532F /* Project object */;
 }
