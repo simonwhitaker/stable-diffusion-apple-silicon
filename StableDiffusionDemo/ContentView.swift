@@ -11,7 +11,10 @@ import StableDiffusion
 struct ContentView: View {
     @State private var prompt: String = "A photo of a kitten on the moon"
     @State private var image: CGImage? = nil
-    @State private var isLoading = false
+    @State private var currentStep: Int? = nil
+    @State private var pipeline: StableDiffusionPipeline? = nil
+
+    let NumSteps = 3
 
     var body: some View {
         VStack {
@@ -22,39 +25,42 @@ struct ContentView: View {
                     action: {
                         print("Calling stable diffusion with prompt: \"\(prompt)\"")
 
-                        guard let modelsUrl = Bundle.main.url(forResource: "merges", withExtension: "txt")?.deletingLastPathComponent() else {
-                            print("Models URL can't be determined")
-                            return
-                        }
-
-                        isLoading = true
+                        currentStep = 0
                         DispatchQueue.global(qos:.background).async {
                             var newImage: CGImage?
                             do {
-                                let pipeline = try StableDiffusionPipeline(resourcesAt: modelsUrl, disableSafety: true)
-                                newImage = try pipeline.generateImages(prompt:prompt, stepCount: 3).first!
+                                newImage = try pipeline!.generateImages(prompt:prompt, stepCount: NumSteps, progressHandler: { progress in
+                                    print("Step \(progress.step) of \(progress.stepCount)")
+                                    DispatchQueue.main.async {
+                                        currentStep = progress.step
+                                    }
+                                    return true
+                                }).first!
 
                                 DispatchQueue.main.async {
                                     image = newImage
-                                    isLoading = false
+                                    currentStep = nil
                                 }
                             } catch {
                                 DispatchQueue.main.async {
                                     print("There was an error: \(error)")
-                                    isLoading = false
+                                    currentStep = nil
                                 }
                             }
                         }
                     },
                     label: {
                         ZStack {
-                            Text("Go").opacity(isLoading ? 0.0 : 1.0)
-                            if isLoading {
-                                ProgressView()
-                            }
+                            Text("Go")
                         }
                     }
-                ).disabled(isLoading)
+                ).disabled(currentStep != nil || pipeline == nil)
+            }
+
+            if currentStep != nil {
+                ProgressView(value: Float(currentStep!), total: Float(NumSteps)) {
+                    Text("Step \(currentStep! + 1) of \(NumSteps)").font(.caption)
+                }
             }
 
             if image != nil {
@@ -64,6 +70,25 @@ struct ContentView: View {
             Spacer()
         }
         .padding()
+        .onAppear {
+            guard let modelsUrl = Bundle.main.url(forResource: "merges", withExtension: "txt")?.deletingLastPathComponent() else {
+                print("Models URL can't be determined")
+                return
+            }
+            var _pipeline: StableDiffusionPipeline? = nil
+            DispatchQueue.global().async {
+                do {
+                    print("Loading pipeline...")
+                    _pipeline = try StableDiffusionPipeline(resourcesAt: modelsUrl, disableSafety: true)
+                    DispatchQueue.main.async {
+                        // TODO: check if you can set state vars from a background thread
+                        pipeline = _pipeline
+                    }
+                } catch {
+                    print("Error loading pipeline: \(error)")
+                }
+            }
+        }
     }
 }
 
