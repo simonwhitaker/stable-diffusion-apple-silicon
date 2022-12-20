@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4377893294FADAF000F81A8 /* StableDiffusion */; };
-		F4D75CDA294DCF2600DD9C54 /* merges.txt in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD7294DCEE900DD9C54 /* merges.txt */; };
-		F4D75CDB294DCF2600DD9C54 /* SafetyChecker.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */; };
-		F4D75CDC294DCF2600DD9C54 /* TextEncoder.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */; };
-		F4D75CDD294DCF2600DD9C54 /* UnetChunk1.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD8294DCF0D00DD9C54 /* UnetChunk1.mlmodelc */; };
-		F4D75CDE294DCF2600DD9C54 /* VAEDecoder.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD5294DCED000DD9C54 /* VAEDecoder.mlmodelc */; };
-		F4D75CDF294DCF2600DD9C54 /* vocab.json in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CD9294DCF0D00DD9C54 /* vocab.json */; };
-		F4D75CE1294DCF5A00DD9C54 /* UnetChunk2.mlmodelc in Resources */ = {isa = PBXBuildFile; fileRef = F4D75CE0294DCF2E00DD9C54 /* UnetChunk2.mlmodelc */; };
 		F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */; };
 		F4E282452949FAA00086532F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
 		F4E282472949FAA10086532F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282462949FAA10086532F /* Assets.xcassets */; };
@@ -22,13 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TextEncoder.mlmodelc; sourceTree = "<group>"; };
-		F4D75CD5294DCED000DD9C54 /* VAEDecoder.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = VAEDecoder.mlmodelc; sourceTree = "<group>"; };
-		F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SafetyChecker.mlmodelc; sourceTree = "<group>"; };
-		F4D75CD7294DCEE900DD9C54 /* merges.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = merges.txt; sourceTree = "<group>"; };
-		F4D75CD8294DCF0D00DD9C54 /* UnetChunk1.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnetChunk1.mlmodelc; sourceTree = "<group>"; };
-		F4D75CD9294DCF0D00DD9C54 /* vocab.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocab.json; sourceTree = "<group>"; };
-		F4D75CE0294DCF2E00DD9C54 /* UnetChunk2.mlmodelc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnetChunk2.mlmodelc; sourceTree = "<group>"; };
 		F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoApp.swift; sourceTree = "<group>"; };
 		F4E282442949FAA00086532F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,24 +34,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F4D75CD3294DC8E700DD9C54 /* models */ = {
-			isa = PBXGroup;
-			children = (
-				F4D75CD7294DCEE900DD9C54 /* merges.txt */,
-				F4D75CD6294DCEE900DD9C54 /* SafetyChecker.mlmodelc */,
-				F4D75CD4294DCECC00DD9C54 /* TextEncoder.mlmodelc */,
-				F4D75CD8294DCF0D00DD9C54 /* UnetChunk1.mlmodelc */,
-				F4D75CE0294DCF2E00DD9C54 /* UnetChunk2.mlmodelc */,
-				F4D75CD5294DCED000DD9C54 /* VAEDecoder.mlmodelc */,
-				F4D75CD9294DCF0D00DD9C54 /* vocab.json */,
-			);
-			path = models;
-			sourceTree = "<group>";
-		};
 		F4E282362949FA9F0086532F = {
 			isa = PBXGroup;
 			children = (
-				F4D75CD3294DC8E700DD9C54 /* models */,
 				F4E282412949FAA00086532F /* StableDiffusionDemo */,
 				F4E282402949FAA00086532F /* Products */,
 			);
@@ -162,13 +133,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4D75CE1294DCF5A00DD9C54 /* UnetChunk2.mlmodelc in Resources */,
-				F4D75CDA294DCF2600DD9C54 /* merges.txt in Resources */,
-				F4D75CDB294DCF2600DD9C54 /* SafetyChecker.mlmodelc in Resources */,
-				F4D75CDC294DCF2600DD9C54 /* TextEncoder.mlmodelc in Resources */,
-				F4D75CDD294DCF2600DD9C54 /* UnetChunk1.mlmodelc in Resources */,
-				F4D75CDE294DCF2600DD9C54 /* VAEDecoder.mlmodelc in Resources */,
-				F4D75CDF294DCF2600DD9C54 /* vocab.json in Resources */,
 				F4E2824A2949FAA10086532F /* Preview Assets.xcassets in Resources */,
 				F4E282472949FAA10086532F /* Assets.xcassets in Resources */,
 			);
