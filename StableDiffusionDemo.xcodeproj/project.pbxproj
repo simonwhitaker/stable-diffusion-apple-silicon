@@ -12,6 +12,8 @@
 		F4E282452949FAA00086532F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
 		F4E282472949FAA10086532F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282462949FAA10086532F /* Assets.xcassets */; };
 		F4E2824A2949FAA10086532F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282492949FAA10086532F /* Preview Assets.xcassets */; };
+		F4F9436E2951C30300D1D75C /* Light-Swift-Untar in Frameworks */ = {isa = PBXBuildFile; productRef = F4F9436D2951C30300D1D75C /* Light-Swift-Untar */; };
+		F4F943702951C6FC00D1D75C /* DownloadModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		F4E282442949FAA00086532F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F4E282462949FAA10086532F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4E282492949FAA10086532F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadModelsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F9436E2951C30300D1D75C /* Light-Swift-Untar in Frameworks */,
 				F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +61,7 @@
 				F4E282442949FAA00086532F /* ContentView.swift */,
 				F4E282462949FAA10086532F /* Assets.xcassets */,
 				F4E282482949FAA10086532F /* Preview Content */,
+				F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */,
 			);
 			path = StableDiffusionDemo;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			name = StableDiffusionDemo;
 			packageProductDependencies = (
 				F4377893294FADAF000F81A8 /* StableDiffusion */,
+				F4F9436D2951C30300D1D75C /* Light-Swift-Untar */,
 			);
 			productName = StableDiffusionDemo;
 			productReference = F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */;
@@ -118,6 +124,7 @@
 			mainGroup = F4E282362949FA9F0086532F;
 			packageReferences = (
 				F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
+				F4F9436C2951C30300D1D75C /* XCRemoteSwiftPackageReference "Light-Swift-Untar" */,
 			);
 			productRefGroup = F4E282402949FAA00086532F /* Products */;
 			projectDirPath = "";
@@ -146,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E282452949FAA00086532F /* ContentView.swift in Sources */,
+				F4F943702951C6FC00D1D75C /* DownloadModelsView.swift in Sources */,
 				F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +365,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		F4F9436C2951C30300D1D75C /* XCRemoteSwiftPackageReference "Light-Swift-Untar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/UInt2048/Light-Swift-Untar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -364,6 +380,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
 			productName = StableDiffusion;
+		};
+		F4F9436D2951C30300D1D75C /* Light-Swift-Untar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4F9436C2951C30300D1D75C /* XCRemoteSwiftPackageReference "Light-Swift-Untar" */;
+			productName = "Light-Swift-Untar";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

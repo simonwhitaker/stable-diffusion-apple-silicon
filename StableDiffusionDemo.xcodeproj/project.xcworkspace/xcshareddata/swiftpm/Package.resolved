@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "light-swift-untar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/UInt2048/Light-Swift-Untar",
+      "state" : {
+        "revision" : "fcff1f1b82373ea64b9565a364f63ffe7fdecf9f",
+        "version" : "1.0.4"
+      }
+    },
+    {
       "identity" : "ml-stable-diffusion",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/ml-stable-diffusion",

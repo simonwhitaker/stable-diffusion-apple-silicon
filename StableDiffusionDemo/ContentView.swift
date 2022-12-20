@@ -15,9 +15,12 @@ struct ContentView: View {
     @State private var pipeline: StableDiffusionPipeline? = nil
 
     let NumSteps = 3
+    let cachedModelsUrl = URL.cachesDirectory
 
     var body: some View {
         VStack {
+            DownloadModelsView(cachedModelsUrl: cachedModelsUrl).padding()
+            
             Text("Stable Diffusion Demo").font(.title)
             HStack {
                 TextField("Prompt:", text: $prompt)
@@ -71,15 +74,11 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            guard let modelsUrl = Bundle.main.url(forResource: "merges", withExtension: "txt")?.deletingLastPathComponent() else {
-                print("Models URL can't be determined")
-                return
-            }
             var _pipeline: StableDiffusionPipeline? = nil
             DispatchQueue.global().async {
                 do {
                     print("Loading pipeline...")
-                    _pipeline = try StableDiffusionPipeline(resourcesAt: modelsUrl, disableSafety: true)
+                    _pipeline = try StableDiffusionPipeline(resourcesAt: cachedModelsUrl, disableSafety: true)
                     DispatchQueue.main.async {
                         // TODO: check if you can set state vars from a background thread
                         pipeline = _pipeline
