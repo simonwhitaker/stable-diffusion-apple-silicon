@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import Combine
+
+final class ModelData: ObservableObject {
+    @Published var hasLocalModels: Bool = hasCachedModels()
+}
 
 var cachedModelsUrl: URL = URL.cachesDirectory
 let requiredFiles = [
@@ -22,7 +27,7 @@ let remoteModelsUrl = URL.init(filePath: #filePath)
     .deletingLastPathComponent()
     .appending(path: "models/models.tar")
 
-func hasModels() -> Bool {
+private func hasCachedModels() -> Bool {
     do {
         print("Cached models path: \(cachedModelsUrl.path())")
         print("Remote models path: \(remoteModelsUrl.path())")

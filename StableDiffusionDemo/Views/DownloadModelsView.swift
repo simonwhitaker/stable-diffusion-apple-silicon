@@ -9,25 +9,25 @@ import SwiftUI
 import Light_Swift_Untar
 
 struct DownloadModelsView: View {
-    @State private var shouldDownloadModels = !hasModels()
+    @EnvironmentObject var modelData: ModelData
+    @State private var isDownloading = false
 
     var body: some View {
         return HStack {
-            if shouldDownloadModels {
-                Button {
-                    Task {
-                        do {
-                            try await downloadModels()
-                            shouldDownloadModels = false
-                        } catch {
-                            print(error)
-                        }
+            Button {
+                Task {
+                    do {
+                        isDownloading = true
+                        try await downloadModels()
+                        modelData.hasLocalModels = true
+                    } catch {
+                        print(error)
                     }
-                } label: {
-                    Text("Download models")
                 }
-            }
-        }
+            } label: {
+                Text("Download models")
+            }.disabled(isDownloading)
+        }.padding()
     }
 }
 

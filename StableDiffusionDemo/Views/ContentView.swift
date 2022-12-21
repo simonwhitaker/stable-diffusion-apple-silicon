@@ -13,81 +13,85 @@ struct ContentView: View {
     @State private var image: CGImage? = nil
     @State private var currentStep: Int? = nil
     @State private var pipeline: StableDiffusionPipeline? = nil
+    @EnvironmentObject var modelData: ModelData
 
     let NumSteps = 3
     let cachedModelsUrl = URL.cachesDirectory
 
     var body: some View {
         VStack {
-            DownloadModelsView().padding()
-            
             Text("Stable Diffusion Demo").font(.title)
-            HStack {
-                TextField("Prompt:", text: $prompt)
-                Button(
-                    action: {
-                        print("Calling stable diffusion with prompt: \"\(prompt)\"")
 
-                        currentStep = 0
-                        DispatchQueue.global(qos:.background).async {
-                            var newImage: CGImage?
-                            do {
-                                newImage = try pipeline!.generateImages(prompt:prompt, stepCount: NumSteps, progressHandler: { progress in
-                                    print("Step \(progress.step) of \(progress.stepCount)")
+            if modelData.hasLocalModels {
+                HStack {
+                    TextField("Prompt:", text: $prompt)
+                    Button(
+                        action: {
+                            print("Calling stable diffusion with prompt: \"\(prompt)\"")
+
+                            currentStep = 0
+                            DispatchQueue.global(qos:.background).async {
+                                var newImage: CGImage?
+                                do {
+                                    newImage = try pipeline!.generateImages(prompt:prompt, stepCount: NumSteps, progressHandler: { progress in
+                                        print("Step \(progress.step) of \(progress.stepCount)")
+                                        DispatchQueue.main.async {
+                                            currentStep = progress.step
+                                        }
+                                        return true
+                                    }).first!
+
                                     DispatchQueue.main.async {
-                                        currentStep = progress.step
+                                        image = newImage
+                                        currentStep = nil
                                     }
-                                    return true
-                                }).first!
-
-                                DispatchQueue.main.async {
-                                    image = newImage
-                                    currentStep = nil
-                                }
-                            } catch {
-                                DispatchQueue.main.async {
-                                    print("There was an error: \(error)")
-                                    currentStep = nil
+                                } catch {
+                                    DispatchQueue.main.async {
+                                        print("There was an error: \(error)")
+                                        currentStep = nil
+                                    }
                                 }
                             }
+                        },
+                        label: {
+                            ZStack {
+                                Text("Go")
+                            }
                         }
-                    },
-                    label: {
-                        ZStack {
-                            Text("Go")
+                    ).disabled(currentStep != nil || pipeline == nil)
+                }.onAppear {
+                    var _pipeline: StableDiffusionPipeline? = nil
+                    DispatchQueue.global().async {
+                        do {
+                            print("Loading pipeline...")
+                            _pipeline = try StableDiffusionPipeline(resourcesAt: cachedModelsUrl, disableSafety: true)
+                            DispatchQueue.main.async {
+                                // TODO: check if you can set state vars from a background thread
+                                pipeline = _pipeline
+                            }
+                        } catch {
+                            print("Error loading pipeline: \(error)")
                         }
                     }
-                ).disabled(currentStep != nil || pipeline == nil)
-            }
-
-            if currentStep != nil {
-                ProgressView(value: Float(currentStep!), total: Float(NumSteps)) {
-                    Text("Step \(currentStep! + 1) of \(NumSteps)").font(.caption)
                 }
-            }
 
-            if image != nil {
-                Image(image!, scale: 1.0, label: Text(verbatim: ""))
-            }
 
-            Spacer()
+                if currentStep != nil {
+                    ProgressView(value: Float(currentStep!), total: Float(NumSteps)) {
+                        Text("Step \(currentStep! + 1) of \(NumSteps)").font(.caption)
+                    }
+                }
+
+                if image != nil {
+                    Image(image!, scale: 1.0, label: Text(verbatim: ""))
+                }
+
+                Spacer()
+            } else {
+                DownloadModelsView()
+            }
         }
         .padding()
-        .onAppear {
-            var _pipeline: StableDiffusionPipeline? = nil
-            DispatchQueue.global().async {
-                do {
-                    print("Loading pipeline...")
-                    _pipeline = try StableDiffusionPipeline(resourcesAt: cachedModelsUrl, disableSafety: true)
-                    DispatchQueue.main.async {
-                        // TODO: check if you can set state vars from a background thread
-                        pipeline = _pipeline
-                    }
-                } catch {
-                    print("Error loading pipeline: \(error)")
-                }
-            }
-        }
     }
 }
 
