@@ -36,8 +36,8 @@ let remoteModelsUrl = URL.init(string: "http://192.168.1.51:8080/models.aar")!
 
 private func hasCachedModels() -> Bool {
     do {
-        print("Cached models path: \(cachedModelsUrl.path())")
-        print("Remote models path: \(remoteModelsUrl.path())")
+        print("Cached models path: \(cachedModelsUrl.absoluteString)")
+        print("Remote models path: \(remoteModelsUrl.absoluteString)")
         let directoryContents = try FileManager.default.contentsOfDirectory(
             at: cachedModelsUrl,
             includingPropertiesForKeys: nil
