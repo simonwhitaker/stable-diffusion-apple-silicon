@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Light_Swift_Untar
 
 struct DownloadModelsView: View {
     @EnvironmentObject var modelData: ModelData
@@ -19,9 +18,11 @@ struct DownloadModelsView: View {
                     do {
                         isDownloading = true
                         try await downloadModels()
+                        isDownloading = false
                         modelData.hasLocalModels = true
                     } catch {
-                        print(error)
+                        print(error.localizedDescription)
+                        isDownloading = false
                     }
                 }
             } label: {
