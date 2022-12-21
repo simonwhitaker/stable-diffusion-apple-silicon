@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            DownloadModelsView(cachedModelsUrl: cachedModelsUrl).padding()
+            DownloadModelsView().padding()
             
             Text("Stable Diffusion Demo").font(.title)
             HStack {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4377893294FADAF000F81A8 /* StableDiffusion */; };
+		F43E4D8A2952F309003C6826 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
 		F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */; };
 		F4E282452949FAA00086532F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
 		F4E282472949FAA10086532F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282462949FAA10086532F /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F43E4D892952F309003C6826 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoApp.swift; sourceTree = "<group>"; };
 		F4E282442949FAA00086532F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F43E4D882952F2F8003C6826 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4E282442949FAA00086532F /* ContentView.swift */,
+				F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F4E282362949FA9F0086532F = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */,
-				F4E282442949FAA00086532F /* ContentView.swift */,
+				F43E4D882952F2F8003C6826 /* Views */,
 				F4E282462949FAA10086532F /* Assets.xcassets */,
 				F4E282482949FAA10086532F /* Preview Content */,
-				F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */,
+				F43E4D892952F309003C6826 /* ModelManager.swift */,
 			);
 			path = StableDiffusionDemo;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4E282452949FAA00086532F /* ContentView.swift in Sources */,
+				F43E4D8A2952F309003C6826 /* ModelManager.swift in Sources */,
 				F4F943702951C6FC00D1D75C /* DownloadModelsView.swift in Sources */,
 				F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */,
 			);
