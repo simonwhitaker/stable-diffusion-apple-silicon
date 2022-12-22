@@ -54,9 +54,7 @@ struct ContentView: View {
                             }
                         },
                         label: {
-                            ZStack {
-                                Text("Go")
-                            }
+                            Text("Go")
                         }
                     ).disabled(currentStep != nil || pipeline == nil)
                 }.onAppear {
