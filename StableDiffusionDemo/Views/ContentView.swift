@@ -16,13 +16,12 @@ struct ContentView: View {
     @EnvironmentObject var modelData: ModelData
 
     let NumSteps = 3
-    let cachedModelsUrl = URL.cachesDirectory
 
     var body: some View {
         VStack {
             Text("Stable Diffusion Demo").font(.title)
 
-            if modelData.hasLocalModels {
+            if modelData.hasCachedModels {
                 HStack {
                     TextField("Prompt:", text: $prompt)
                     Button(
@@ -62,7 +61,7 @@ struct ContentView: View {
                     DispatchQueue.global().async {
                         do {
                             print("Loading pipeline...")
-                            _pipeline = try StableDiffusionPipeline(resourcesAt: cachedModelsUrl, disableSafety: true)
+                            _pipeline = try StableDiffusionPipeline(resourcesAt: modelData.cachedModelsUrl, disableSafety: true)
                             DispatchQueue.main.async {
                                 // TODO: check if you can set state vars from a background thread
                                 pipeline = _pipeline
@@ -95,6 +94,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(ModelData())
     }
 }

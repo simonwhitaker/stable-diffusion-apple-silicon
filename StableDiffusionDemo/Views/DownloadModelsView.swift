@@ -17,9 +17,9 @@ struct DownloadModelsView: View {
                 Task {
                     do {
                         isDownloading = true
-                        try await downloadModels()
+                        try await modelData.downloadModels()
                         isDownloading = false
-                        modelData.hasLocalModels = true
+                        modelData.hasCachedModels = true
                     } catch {
                         print(error.localizedDescription)
                         isDownloading = false
