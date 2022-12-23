@@ -62,10 +62,13 @@ final class ModelData: ObservableObject {
     }
 
     func downloadModels() async throws -> Void {
-        let modelsRequest = URLRequest(url: remoteModelsUrl)
+        // NB: using a delegate to track download progress here doesn't work,
+        // so don't do that. :,-(
+        // See https://stackoverflow.com/a/70396188
+
         print("Downloading \(remoteModelsUrl.lastPathComponent)")
-        let (localURL, _) = try await URLSession.shared.download(for: modelsRequest)
-        print("Unpacking \(remoteModelsUrl.lastPathComponent)")
+        let (localURL, _) = try await URLSession.shared.download(from: remoteModelsUrl)
+        print("Unpacking \(localURL.lastPathComponent)")
         let _ = try unarchiveModels(aarFile: FilePath(localURL.path()))
     }
 
