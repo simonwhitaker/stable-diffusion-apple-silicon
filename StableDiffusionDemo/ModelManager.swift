@@ -31,6 +31,7 @@ final class ModelData: ObservableObject {
             .deletingLastPathComponent()
             .deletingLastPathComponent()
             .appending(path: "models/models.aar")
+//        remoteModelsUrl = URL.init(string: "https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso")!
 #else
         remoteModelsUrl = URL.init(string: "http://192.168.1.51:8080/models.aar")!
 #endif
@@ -61,15 +62,35 @@ final class ModelData: ObservableObject {
         return true
     }
 
-    func downloadModels() async throws -> Void {
-        // NB: using a delegate to track download progress here doesn't work,
-        // so don't do that. :,-(
-        // See https://stackoverflow.com/a/70396188
-
+    func downloadModels(completion: @escaping (URL?, Error?) -> Void, progress: @escaping (Double) -> Void) -> Void {
         print("Downloading \(remoteModelsUrl.lastPathComponent)")
-        let (localURL, _) = try await URLSession.shared.download(from: remoteModelsUrl)
-        print("Unpacking \(localURL.lastPathComponent)")
-        let _ = try unarchiveModels(aarFile: FilePath(localURL.path()))
+        let request = URLRequest(url: remoteModelsUrl)
+        var observation: NSKeyValueObservation? = nil
+        let downloadTask = URLSession.shared.downloadTask(with: request) { localURL, _, error in
+            if error != nil {
+                completion(nil, error)
+                return
+            }
+            guard let localURL = localURL else {
+                // TODO: call completion with an error here
+                print("🤷‍♂️ URLSessionDownloadTask didn't return an error, but didn't return a local URL either")
+                return
+            }
+            print("Unpacking \(localURL.lastPathComponent)")
+            do {
+                observation?.invalidate()
+                let _ = try self.unarchiveModels(aarFile: FilePath(localURL.path()))
+                completion(localURL, nil)
+            }
+            catch {
+                print("On unpacking archive:", error)
+                completion(nil, error)
+            }
+        }
+        observation = downloadTask.progress.observe(\.fractionCompleted) { observationProgress, _ in
+            progress(observationProgress.fractionCompleted)
+        }
+        downloadTask.resume()
     }
 
     private func unarchiveModels(aarFile: FilePath) throws -> Void {
