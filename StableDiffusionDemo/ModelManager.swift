@@ -35,7 +35,6 @@ final class ModelData: ObservableObject {
             .deletingLastPathComponent()
             .deletingLastPathComponent()
             .appending(path: "models/models.aar")
-//        remoteModelsUrl = URL.init(string: "https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso")!
 #else
         remoteModelsUrl = URL.init(string: "http://192.168.1.51:8080/models.aar")!
 #endif
