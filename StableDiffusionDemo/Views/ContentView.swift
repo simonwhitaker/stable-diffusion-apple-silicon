@@ -13,7 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var modelData: ModelData
 
     var body: some View {
-        VStack {
+        VStack(spacing:10.0) {
             Text("Stable Diffusion Demo").font(.title)
 
             if !modelData.hasCachedModels {

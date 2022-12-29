@@ -20,6 +20,10 @@ let requiredFiles = [
     "vocab.json"
 ]
 
+enum ModelDownloadStatus {
+    case none, downloading, unpacking
+}
+
 final class ModelData: ObservableObject {
     @Published var hasCachedModels: Bool = false
     let cachedModelsUrl: URL = URL.cachesDirectory.appending(component: "models", directoryHint: .isDirectory)
@@ -62,7 +66,7 @@ final class ModelData: ObservableObject {
         return true
     }
 
-    func downloadModels(completion: @escaping (URL?, Error?) -> Void, progress: @escaping (Double) -> Void) -> Void {
+    func downloadModels(completion: @escaping (URL?, Error?) -> Void, progress: @escaping (Double, ModelDownloadStatus) -> Void) -> Void {
         print("Downloading \(remoteModelsUrl.lastPathComponent)")
         let request = URLRequest(url: remoteModelsUrl)
         var observation: NSKeyValueObservation? = nil
@@ -79,6 +83,7 @@ final class ModelData: ObservableObject {
             print("Unpacking \(localURL.lastPathComponent)")
             do {
                 observation?.invalidate()
+                progress(1.0, .unpacking)
                 let _ = try self.unarchiveModels(aarFile: FilePath(localURL.path()))
                 completion(localURL, nil)
             }
@@ -88,7 +93,7 @@ final class ModelData: ObservableObject {
             }
         }
         observation = downloadTask.progress.observe(\.fractionCompleted) { observationProgress, _ in
-            progress(observationProgress.fractionCompleted)
+            progress(observationProgress.fractionCompleted, .downloading)
         }
         downloadTask.resume()
     }

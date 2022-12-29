@@ -13,7 +13,7 @@ struct LoadingModelsView: View {
             ProgressView {
                 Text("Waking the AI...")
             }
-        }.padding()
+        }
     }
 }
 

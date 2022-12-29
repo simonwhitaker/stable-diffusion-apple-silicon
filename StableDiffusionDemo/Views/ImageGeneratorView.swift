@@ -72,7 +72,7 @@ struct ImageGeneratorView_Previews: PreviewProvider {
             let pipeline = try StableDiffusionPipeline(resourcesAt: URL.currentDirectory())
             return AnyView(ImageGeneratorView(pipeline: pipeline))
         } catch {
-            return AnyView(Text("On loading SD pipeline: \(error.localizedDescription)"))
+            return AnyView(Text("Error loading SD pipeline: \(error.localizedDescription)"))
         }
     }
 }
