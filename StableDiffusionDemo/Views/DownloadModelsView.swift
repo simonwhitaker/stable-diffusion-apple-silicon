@@ -13,7 +13,8 @@ struct DownloadModelsView: View {
     @State private var progress: Double = 0
 
     var body: some View {
-        return VStack {
+        return VStack(spacing: 20.0) {
+            Text("To start, you need to download the AI models. They're large (2.3GB), so do this over Wifi. You will only need to do this once.")
             Button {
                 isDownloading = true
                 modelData.downloadModels { _, error in
@@ -31,10 +32,15 @@ struct DownloadModelsView: View {
                     }
                 }
             } label: {
-                Text("Download models")
+                HStack {
+                    Image(systemName: "arrow.down.circle")
+                    Text("Download models")
+                }
             }.disabled(isDownloading)
 
-            ProgressView(value: progress).opacity(isDownloading ? 1.0 : 0.0)
+            ProgressView(value: progress, label: {
+                Text("Downloading models...")
+            }).opacity(isDownloading ? 1.0 : 0.0)
         }.padding()
     }
 }
