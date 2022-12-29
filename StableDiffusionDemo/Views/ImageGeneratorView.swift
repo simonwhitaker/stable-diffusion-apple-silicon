@@ -10,8 +10,15 @@ import StableDiffusion
 
 struct ImageGeneratorView: View {
     @State private var prompt: String = "A photo of a kitten on the moon"
-    @State private var image: CGImage? = nil
+    @State private var cgImage: CGImage? = nil
     @State private var currentStep: Int? = nil
+
+    private var image: Image? {
+        guard let cgImage = cgImage else {
+            return nil
+        }
+        return Image(cgImage, scale: 1.0, label: Text(verbatim: ""))
+    }
 
     var pipeline: StableDiffusionPipeline
     let NumSteps = 3
@@ -36,7 +43,7 @@ struct ImageGeneratorView: View {
                             }).first!
 
                             DispatchQueue.main.async {
-                                image = newImage
+                                cgImage = newImage
                                 currentStep = nil
                             }
                         } catch {
@@ -60,8 +67,11 @@ struct ImageGeneratorView: View {
             }
         }
 
-        if image != nil {
-            Image(image!, scale: 1.0, label: Text(verbatim: ""))
+        if let image = image {
+            VStack(spacing: 10.0) {
+                image.resizable(resizingMode: .stretch).frame(width: 200, height: 200)
+                ShareLink(item: image, preview: SharePreview(prompt, image: image))
+            }
         }
     }
 }
