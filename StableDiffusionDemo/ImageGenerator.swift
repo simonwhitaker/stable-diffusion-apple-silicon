@@ -10,7 +10,15 @@ import CoreGraphics
 import StableDiffusion
 import UIKit
 
+/// A set of methods that define ways of generating images
 protocol ImageGenerator {
+    /// Generates images matching the supplied prompt.
+    /// - Parameter prompt: A description of the image you want to generate
+    /// - Parameter imageCount: The number of images to return
+    /// - Returns: An array of images
+    ///
+    /// Note that you may get fewer than `imageCount` images back. For example, the Stable Diffusion pipeline will remove images that don't pass safety checks.
+
     func generateImagesForPrompt(prompt: String, imageCount: Int) async throws -> [CGImage]
 }
 
@@ -34,6 +42,7 @@ extension StableDiffusionPipeline: ImageGenerator {
     }
 }
 
+/// A dummy image generator that returns images from the app's asset catalog. Useful for testing on non-Apple Silicon devices.
 struct LocalImageGenerator: ImageGenerator {
     func generateImagesForPrompt(prompt: String, imageCount: Int) async throws -> [CGImage] {
         guard let image = UIImage(named: "sample-image")?.cgImage else {
