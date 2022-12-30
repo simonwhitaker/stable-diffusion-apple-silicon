@@ -9,7 +9,7 @@ import SwiftUI
 import StableDiffusion
 
 struct ContentView: View {
-    @State private var pipeline: StableDiffusionPipeline? = nil
+    @State private var imageGenerator: ImageGenerator? = nil
     @EnvironmentObject var modelData: ModelData
 
     var body: some View {
@@ -18,23 +18,27 @@ struct ContentView: View {
 
             if !modelData.hasCachedModels {
                 DownloadModelsView()
-            } else if pipeline == nil {
+            } else if imageGenerator == nil {
                 LoadingModelsView().onAppear {
+#if targetEnvironment(simulator)
+                    imageGenerator = LocalImageGenerator()
+#else
                     var _pipeline: StableDiffusionPipeline? = nil
                     DispatchQueue.global().async {
                         do {
                             print("Loading pipeline...")
                             _pipeline = try StableDiffusionPipeline(resourcesAt: modelData.cachedModelsUrl, disableSafety: true)
                             DispatchQueue.main.async {
-                                pipeline = _pipeline
+                                imageGenerator = _pipeline
                             }
                         } catch {
                             print("Error loading pipeline: \(error)")
                         }
                     }
+#endif
                 }
             } else {
-                ImageGeneratorView(pipeline: pipeline!)
+                ImageGeneratorView(imageGenerator: imageGenerator!)
             }
 
             Spacer()

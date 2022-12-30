@@ -11,6 +11,7 @@
 		F43E4D8A2952F309003C6826 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
 		F4ADC029295D993200105E9D /* LoadingModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC028295D993200105E9D /* LoadingModelsView.swift */; };
 		F4ADC02B295DA09F00105E9D /* ImageGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */; };
+		F4DFD52F295EE14300E2327D /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DFD52E295EE14300E2327D /* ImageGenerator.swift */; };
 		F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */; };
 		F4E282452949FAA00086532F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
 		F4E282472949FAA10086532F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4E282462949FAA10086532F /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		F43E4D892952F309003C6826 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		F4ADC028295D993200105E9D /* LoadingModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModelsView.swift; sourceTree = "<group>"; };
 		F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorView.swift; sourceTree = "<group>"; };
+		F4DFD52E295EE14300E2327D /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
 		F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDemoApp.swift; sourceTree = "<group>"; };
 		F4E282442949FAA00086532F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				F4E282462949FAA10086532F /* Assets.xcassets */,
 				F4E282482949FAA10086532F /* Preview Content */,
 				F43E4D892952F309003C6826 /* ModelManager.swift */,
+				F4DFD52E295EE14300E2327D /* ImageGenerator.swift */,
 			);
 			path = StableDiffusionDemo;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				F4ADC02B295DA09F00105E9D /* ImageGeneratorView.swift in Sources */,
 				F4E282452949FAA00086532F /* ContentView.swift in Sources */,
 				F43E4D8A2952F309003C6826 /* ModelManager.swift in Sources */,
+				F4DFD52F295EE14300E2327D /* ImageGenerator.swift in Sources */,
 				F4F943702951C6FC00D1D75C /* DownloadModelsView.swift in Sources */,
 				F4ADC029295D993200105E9D /* LoadingModelsView.swift in Sources */,
 				F4E282432949FAA00086532F /* StableDiffusionDemoApp.swift in Sources */,
