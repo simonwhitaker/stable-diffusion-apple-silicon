@@ -29,7 +29,7 @@ struct ImageGeneratorView: View {
                 Task {
                     print("Generating image prompt: \"\(prompt)\"")
                     do {
-                        let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt)
+                        let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1)
                         cgImage = images.first!
                     } catch {
                         print("There was an error: \(error)")
