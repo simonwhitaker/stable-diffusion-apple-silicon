@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4377893294FADAF000F81A8 /* StableDiffusion */; };
 		F43E4D8A2952F309003C6826 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
+		F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */; };
+		F4950A462960797400A1481F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A452960797400A1481F /* Assets.xcassets */; };
+		F4950A492960797400A1481F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A482960797400A1481F /* Preview Assets.xcassets */; };
+		F4950A4E2960799E00A1481F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
+		F4950A4F296079A400A1481F /* DownloadModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */; };
+		F4950A50296079A700A1481F /* LoadingModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC028295D993200105E9D /* LoadingModelsView.swift */; };
+		F4950A51296079A900A1481F /* ImageGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */; };
+		F4950A52296079AC00A1481F /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
+		F4950A53296079AE00A1481F /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DFD52E295EE14300E2327D /* ImageGenerator.swift */; };
+		F4950A56296079EE00A1481F /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4950A55296079EE00A1481F /* StableDiffusion */; };
 		F4ADC029295D993200105E9D /* LoadingModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC028295D993200105E9D /* LoadingModelsView.swift */; };
 		F4ADC02B295DA09F00105E9D /* ImageGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */; };
 		F4DFD52F295EE14300E2327D /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DFD52E295EE14300E2327D /* ImageGenerator.swift */; };
@@ -21,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		F43E4D892952F309003C6826 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDesktopApp.swift; sourceTree = "<group>"; };
+		F4950A452960797400A1481F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4950A482960797400A1481F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F4950A4A2960797400A1481F /* StableDiffusionDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StableDiffusionDesktop.entitlements; sourceTree = "<group>"; };
 		F4ADC028295D993200105E9D /* LoadingModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModelsView.swift; sourceTree = "<group>"; };
 		F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorView.swift; sourceTree = "<group>"; };
 		F4DFD52E295EE14300E2327D /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
@@ -33,6 +48,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F4950A3C2960797300A1481F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4950A56296079EE00A1481F /* StableDiffusion in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4E2823C2949FA9F0086532F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,11 +78,39 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F4950A402960797300A1481F /* StableDiffusionDesktop */ = {
+			isa = PBXGroup;
+			children = (
+				F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */,
+				F4950A452960797400A1481F /* Assets.xcassets */,
+				F4950A4A2960797400A1481F /* StableDiffusionDesktop.entitlements */,
+				F4950A472960797400A1481F /* Preview Content */,
+			);
+			path = StableDiffusionDesktop;
+			sourceTree = "<group>";
+		};
+		F4950A472960797400A1481F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F4950A482960797400A1481F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4950A54296079EE00A1481F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4E282362949FA9F0086532F = {
 			isa = PBXGroup;
 			children = (
 				F4E282412949FAA00086532F /* StableDiffusionDemo */,
+				F4950A402960797300A1481F /* StableDiffusionDesktop */,
 				F4E282402949FAA00086532F /* Products */,
+				F4950A54296079EE00A1481F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				F4E2823F2949FAA00086532F /* StableDiffusionDemo.app */,
+				F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +147,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F4950A3E2960797300A1481F /* StableDiffusionDesktop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4950A4D2960797400A1481F /* Build configuration list for PBXNativeTarget "StableDiffusionDesktop" */;
+			buildPhases = (
+				F4950A3B2960797300A1481F /* Sources */,
+				F4950A3C2960797300A1481F /* Frameworks */,
+				F4950A3D2960797300A1481F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StableDiffusionDesktop;
+			packageProductDependencies = (
+				F4950A55296079EE00A1481F /* StableDiffusion */,
+			);
+			productName = StableDiffusionDesktop;
+			productReference = F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F4E2823E2949FA9F0086532F /* StableDiffusionDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4E282632949FAA10086532F /* Build configuration list for PBXNativeTarget "StableDiffusionDemo" */;
@@ -125,6 +197,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					F4950A3E2960797300A1481F = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					F4E2823E2949FA9F0086532F = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -147,11 +222,21 @@
 			projectRoot = "";
 			targets = (
 				F4E2823E2949FA9F0086532F /* StableDiffusionDemo */,
+				F4950A3E2960797300A1481F /* StableDiffusionDesktop */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F4950A3D2960797300A1481F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4950A492960797400A1481F /* Preview Assets.xcassets in Resources */,
+				F4950A462960797400A1481F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4E2823D2949FA9F0086532F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,6 +249,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F4950A3B2960797300A1481F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4950A51296079A900A1481F /* ImageGeneratorView.swift in Sources */,
+				F4950A4E2960799E00A1481F /* ContentView.swift in Sources */,
+				F4950A4F296079A400A1481F /* DownloadModelsView.swift in Sources */,
+				F4950A53296079AE00A1481F /* ImageGenerator.swift in Sources */,
+				F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */,
+				F4950A50296079A700A1481F /* LoadingModelsView.swift in Sources */,
+				F4950A52296079AC00A1481F /* ModelManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F4E2823B2949FA9F0086532F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +280,64 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		F4950A4B2960797400A1481F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StableDiffusionDesktop/StableDiffusionDesktop.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StableDiffusionDesktop/Preview Content\"";
+				DEVELOPMENT_TEAM = VW9QM42U4U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionDesktop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F4950A4C2960797400A1481F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StableDiffusionDesktop/StableDiffusionDesktop.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StableDiffusionDesktop/Preview Content\"";
+				DEVELOPMENT_TEAM = VW9QM42U4U;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionDesktop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		F4E282612949FAA10086532F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -356,6 +513,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F4950A4D2960797400A1481F /* Build configuration list for PBXNativeTarget "StableDiffusionDesktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4950A4B2960797400A1481F /* Debug */,
+				F4950A4C2960797400A1481F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F4E2823A2949FA9F0086532F /* Build configuration list for PBXProject "StableDiffusionDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -389,6 +555,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		F4377893294FADAF000F81A8 /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+		F4950A55296079EE00A1481F /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
 			productName = StableDiffusion;

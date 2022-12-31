@@ -8,7 +8,9 @@
 import Foundation
 import CoreGraphics
 import StableDiffusion
+#if os(iOS)
 import UIKit
+#endif
 
 /// A set of methods that define ways of generating images
 protocol ImageGenerator {
@@ -45,9 +47,13 @@ extension StableDiffusionPipeline: ImageGenerator {
 /// A dummy image generator that returns images from the app's asset catalog. Useful for testing on non-Apple Silicon devices.
 struct LocalImageGenerator: ImageGenerator {
     func generateImagesForPrompt(prompt: String, imageCount: Int) async throws -> [CGImage] {
+        #if os(iOS)
         guard let image = UIImage(named: "sample-image")?.cgImage else {
             return []
         }
         return [image]
+        #else
+        return []
+        #endif
     }
 }

@@ -20,14 +20,11 @@ struct ContentView: View {
                 DownloadModelsView()
             } else if imageGenerator == nil {
                 LoadingModelsView().onAppear {
-#if targetEnvironment(simulator)
-                    imageGenerator = LocalImageGenerator()
-#else
                     var _pipeline: StableDiffusionPipeline? = nil
                     DispatchQueue.global().async {
                         do {
                             print("Loading pipeline...")
-                            _pipeline = try StableDiffusionPipeline(resourcesAt: modelData.cachedModelsUrl, disableSafety: true)
+                            _pipeline = try StableDiffusionPipeline(resourcesAt: modelData.localModelDirectoryUrl, disableSafety: true)
                             DispatchQueue.main.async {
                                 imageGenerator = _pipeline
                             }
@@ -35,7 +32,6 @@ struct ContentView: View {
                             print("Error loading pipeline: \(error)")
                         }
                     }
-#endif
                 }
             } else {
                 ImageGeneratorView(imageGenerator: imageGenerator!)

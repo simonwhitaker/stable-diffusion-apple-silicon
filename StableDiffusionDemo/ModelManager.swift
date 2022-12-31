@@ -11,7 +11,7 @@ import Foundation
 import System
 
 let requiredFiles = [
-    "SafetyChecker.mlmodelc",
+//    "SafetyChecker.mlmodelc",
     "TextEncoder.mlmodelc",
     "UnetChunk1.mlmodelc",
     "UnetChunk2.mlmodelc",
@@ -26,7 +26,7 @@ enum ModelDownloadStatus {
 
 final class ModelData: ObservableObject {
     @Published var hasCachedModels: Bool = false
-    let cachedModelsUrl: URL = URL.cachesDirectory.appending(component: "models", directoryHint: .isDirectory)
+    let localModelDirectoryUrl: URL = URL.libraryDirectory.appending(component: "models", directoryHint: .isDirectory)
     let remoteModelsUrl: URL
 
     init() {
@@ -36,18 +36,26 @@ final class ModelData: ObservableObject {
             .deletingLastPathComponent()
             .appending(path: "models/models.aar")
 #else
-        remoteModelsUrl = URL.init(string: "http://192.168.1.51:8080/models.aar")!
+        remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.aar")!
+//        remoteModelsUrl = URL.init(string: "http://192.168.1.51:8080/models.aar")!
 #endif
         hasCachedModels = getHasCachedModels()
+        
+        do {
+            print("Creating local model directory...")
+            try FileManager.default.createDirectory(at: localModelDirectoryUrl, withIntermediateDirectories: true)
+        } catch {
+            print("On attempting to create local model directory: \(error.localizedDescription)")
+        }
 
-        print("Cached models URL: \(cachedModelsUrl)")
+        print("Local models URL: \(localModelDirectoryUrl)")
         print("Remote models URL: \(remoteModelsUrl)")
     }
 
     private func getHasCachedModels() -> Bool {
         do {
             let directoryContents = try FileManager.default.contentsOfDirectory(
-                at: cachedModelsUrl,
+                at: localModelDirectoryUrl,
                 includingPropertiesForKeys: nil
             )
 
@@ -132,11 +140,11 @@ final class ModelData: ObservableObject {
         }
 
         // Specify the Destination
-        let decompressDestination = FilePath(cachedModelsUrl.path())
+        let decompressDestination = FilePath(localModelDirectoryUrl.path())
 
         // Create the destination, if needed
         do {
-            try FileManager.default.createDirectory(at: cachedModelsUrl, withIntermediateDirectories: true)
+            try FileManager.default.createDirectory(at: localModelDirectoryUrl, withIntermediateDirectories: true)
         } catch {
             print("On creating cached model directory: \(error)")
         }
