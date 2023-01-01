@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F414D8EE2962441B000391CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F414D8ED2962441B000391CF /* Info.plist */; };
+		F414D8F029624424000391CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F414D8EF29624424000391CF /* Info.plist */; };
 		F4377894294FADAF000F81A8 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4377893294FADAF000F81A8 /* StableDiffusion */; };
 		F43E4D8A2952F309003C6826 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
 		F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F414D8ED2962441B000391CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F414D8EF29624424000391CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43E4D892952F309003C6826 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDesktopApp.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		F4950A402960797300A1481F /* StableDiffusionDesktop */ = {
 			isa = PBXGroup;
 			children = (
+				F414D8EF29624424000391CF /* Info.plist */,
 				F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */,
 				F4950A452960797400A1481F /* Assets.xcassets */,
 				F4950A4A2960797400A1481F /* StableDiffusionDesktop.entitlements */,
@@ -126,6 +131,7 @@
 		F4E282412949FAA00086532F /* StableDiffusionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F414D8ED2962441B000391CF /* Info.plist */,
 				F4E282422949FAA00086532F /* StableDiffusionDemoApp.swift */,
 				F43E4D882952F2F8003C6826 /* Views */,
 				F4E282462949FAA10086532F /* Assets.xcassets */,
@@ -234,6 +240,7 @@
 			files = (
 				F4950A492960797400A1481F /* Preview Assets.xcassets in Resources */,
 				F4950A462960797400A1481F /* Assets.xcassets in Resources */,
+				F414D8F029624424000391CF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +250,7 @@
 			files = (
 				F4E2824A2949FAA10086532F /* Preview Assets.xcassets in Resources */,
 				F4E282472949FAA10086532F /* Assets.xcassets in Resources */,
+				F414D8EE2962441B000391CF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
