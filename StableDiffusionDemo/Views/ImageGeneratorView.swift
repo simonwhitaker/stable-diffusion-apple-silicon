@@ -11,6 +11,7 @@ import StableDiffusion
 struct ImageGeneratorView: View {
     @State private var prompt: String = "A photo of a kitten on the moon"
     @State private var cgImage: CGImage? = nil
+    @State private var generationTime: TimeInterval?
 
     private var image: Image? {
         guard let cgImage = cgImage else {
@@ -22,25 +23,38 @@ struct ImageGeneratorView: View {
     var imageGenerator: ImageGenerator
 
     var body: some View {
-        TextField("", text: $prompt)
-            .submitLabel(.go)
-            .textFieldStyle(.roundedBorder)
-            .onSubmit {
-                Task {
-                    print("Generating image prompt: \"\(prompt)\"")
-                    do {
-                        let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1)
-                        cgImage = images.first!
-                    } catch {
-                        print("There was an error: \(error)")
+        VStack {
+            HStack {
+                TextField("", text: $prompt)
+                    .textFieldStyle(.roundedBorder)
+                Button {
+                    Task {
+                        print("Generating image prompt: \"\(prompt)\"")
+                        do {
+                            let tStart = Date.now
+                            let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1)
+                            generationTime = Date.now.timeIntervalSince(tStart)
+                            cgImage = images.first!
+                        } catch {
+                            print("There was an error: \(error)")
+                        }
                     }
+                } label: {
+                    Text("Go")
                 }
-            }
 
-        if let image = image {
-            VStack(spacing: 10.0) {
-                image.resizable(resizingMode: .stretch).frame(width: 200, height: 200)
-                ShareLink(item: image, preview: SharePreview(prompt, image: image))
+            }
+            
+            if let image = image {
+                VStack() {
+                    image.resizable(resizingMode: .stretch).frame(width: 300, height: 300)
+                    
+                    if let generationTime = generationTime {
+                        Text("Generation time: \(generationTime, specifier: "%.2f")s").font(.caption)
+                    }
+
+                    ShareLink(item: image, preview: SharePreview(prompt, image: image))
+                }
             }
         }
     }
