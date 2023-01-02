@@ -1,6 +1,6 @@
 # Stable Diffusion on Apple Silicon
 
-This repo contains a simple app for running Stable Diffusion natively on macOS (currently works) and iOS (tends not to).
+This repo contains a simple app for running Stable Diffusion natively on macOS.
 
 ![MacOS screenshot showing the generation of an image with the caption "a photo of a kitten on the moon"](assets/screenshot-macos.png)
 
@@ -12,19 +12,15 @@ The app expects to be able to download models at startup from http://localhost:8
 
 Either follow the instructions [here](https://github.com/apple/ml-stable-diffusion#-using-ready-made-core-ml-models-from-hugging-face-hub) to use pre-built models from Hugging Face Hub, or the instructions [here](https://github.com/apple/ml-stable-diffusion#-using-ready-made-core-ml-models-from-hugging-face-hub) to build them yourself.
 
-If building the models yourself, make sure to use the (slightly mis-named) `--bundle-resources-for-swift-cli` option, to output models in a format suitable for consumption by Swift. (The default is to output models suitable for consumption by Python). You should also pass the `--chunk-unet` argument; a chunked UNet model is required for iOS, and seems to do no harm on macOS.
+If building the models yourself, make sure to use the (slightly mis-named) `--bundle-resources-for-swift-cli` option, to output models in a format suitable for consumption by Swift. (The default is to output models suitable for consumption by Python).
 
 Either way, you should end up with a folder with these contents:
 
 - TextEncoder.mlmodelc
 - Unet.mlmodelc
-- UnetChunk1.mlmodelc
-- UnetChunk2.mlmodelc
 - VAEDecoder.mlmodelc
 - merges.txt
 - vocab.json
-
-*Note: you've got too copies of the Unet model here; chunked and unchunked. You don't need both, so go ahead and delete Unet.mlmodelc and save a few GB.*
 
 To build the .aar model archive, `cd` to that directory and run:
 

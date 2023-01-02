@@ -30,15 +30,7 @@ final class ModelData: ObservableObject {
     let remoteModelsUrl: URL
 
     init() {
-#if targetEnvironment(simulator)
-        remoteModelsUrl = URL.init(filePath: #filePath)
-            .deletingLastPathComponent()
-            .deletingLastPathComponent()
-            .appending(path: "models/models.aar")
-#else
         remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.aar")!
-//        remoteModelsUrl = URL.init(string: "http://192.168.1.51:8080/models.aar")!
-#endif
         hasCachedModels = getHasCachedModels()
         
         do {
