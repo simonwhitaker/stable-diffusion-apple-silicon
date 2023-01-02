@@ -10,9 +10,11 @@ import SwiftUI
 struct LoadingModelsView: View {
     var body: some View {
         VStack {
+            Spacer()
             ProgressView {
                 Text("Waking the AI...")
             }
+            Spacer()
         }
     }
 }
