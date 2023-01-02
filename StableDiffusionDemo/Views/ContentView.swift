@@ -14,8 +14,6 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing:10.0) {
-            Text("Stable Diffusion Demo").font(.title)
-
             if !modelData.hasCachedModels {
                 DownloadModelsView()
             } else if imageGenerator == nil {
