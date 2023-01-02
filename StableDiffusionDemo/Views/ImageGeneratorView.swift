@@ -8,11 +8,16 @@
 import SwiftUI
 import StableDiffusion
 
-struct ImageGeneratorView: View {
+private let ImageSize: CGSize = CGSize(width: 300, height: 300)
+
+struct ImageGeneratorView: View, ImageGeneratorDelegate {
     @State private var prompt: String = "A photo of a kitten on the moon"
     @State private var cgImage: CGImage? = nil
     @State private var generationTime: TimeInterval?
-
+    @State private var step: Int = 0
+    @State private var totalSteps: Int = 1
+    @State private var isGenerating: Bool = false
+    
     private var image: Image? {
         guard let cgImage = cgImage else {
             return nil
@@ -30,9 +35,14 @@ struct ImageGeneratorView: View {
                 Button {
                     Task {
                         print("Generating image prompt: \"\(prompt)\"")
+                        let tStart = Date.now
+                        step = 0
+                        isGenerating = true
+                        defer {
+                            isGenerating = false
+                        }
                         do {
-                            let tStart = Date.now
-                            let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1)
+                            let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1, delegate: self)
                             generationTime = Date.now.timeIntervalSince(tStart)
                             cgImage = images.first!
                         } catch {
@@ -42,21 +52,38 @@ struct ImageGeneratorView: View {
                 } label: {
                     Text("Go")
                 }
-
             }
             
-            if let image = image {
-                VStack() {
-                    image.resizable(resizingMode: .stretch).frame(width: 300, height: 300)
-                    
-                    if let generationTime = generationTime {
-                        Text("Generation time: \(generationTime, specifier: "%.2f")s").font(.caption)
-                    }
-
-                    ShareLink(item: image, preview: SharePreview(prompt, image: image))
+            ZStack {
+                if let image = image {
+                    image
+                        .resizable()
+                        .scaledToFill()
+                } else {
+                    Image(systemName: "photo")
+                        .foregroundColor(Color(white: 0.2))
+                        .font(.system(.largeTitle))
                 }
+            }.frame(width: ImageSize.width, height: ImageSize.height).background(Color(white: 0.6))
+
+            if let image = image {
+                ShareLink(item: image, preview: SharePreview(prompt, image: image))
+            }
+            
+            // Status area
+            if isGenerating {
+                ProgressView(value: Float(step), total: Float(totalSteps)) {
+                    Text("Generating...").font(.caption)
+                }
+            } else if let generationTime = generationTime {
+                Text("Generation time: \(generationTime, specifier: "%.2f")s").font(.caption)
             }
         }
+    }
+    
+    func didCompleteStep(step: Int, totalSteps: Int) {
+        self.step = step
+        self.totalSteps = totalSteps
     }
 }
 

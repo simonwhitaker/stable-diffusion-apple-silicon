@@ -12,6 +12,10 @@ import StableDiffusion
 import UIKit
 #endif
 
+protocol ImageGeneratorDelegate {
+    func didCompleteStep(step: Int, totalSteps: Int)
+}
+
 /// A set of methods that define ways of generating images
 protocol ImageGenerator {
     /// Generates images matching the supplied prompt.
@@ -21,13 +25,20 @@ protocol ImageGenerator {
     ///
     /// Note that you may get fewer than `imageCount` images back. For example, the Stable Diffusion pipeline will remove images that don't pass safety checks.
 
-    func generateImagesForPrompt(prompt: String, imageCount: Int) async throws -> [CGImage]
+    func generateImagesForPrompt(prompt: String, imageCount: Int, delegate: ImageGeneratorDelegate?) async throws -> [CGImage]
 }
 
 extension StableDiffusionPipeline: ImageGenerator {
-    func generateImagesForPrompt(prompt: String, imageCount: Int) async throws -> [CGImage] {
+    func generateImagesForPrompt(prompt: String, imageCount: Int = 1, delegate: ImageGeneratorDelegate? = nil) async throws -> [CGImage] {
         do {
-            let images = try self.generateImages(prompt:prompt, imageCount: imageCount)
+            let seed = Int.random(in: 0...Int(UInt32.max)) // argument is an Int, but it gets cast to UInt32.
+            let images = try self.generateImages(prompt:prompt, imageCount: imageCount, seed: seed, progressHandler: { progress in
+                DispatchQueue.main.async {
+                    
+                    delegate?.didCompleteStep(step: progress.step, totalSteps: progress.stepCount)
+                }
+                return true
+            })
             return try await withCheckedThrowingContinuation { continuation in
                 DispatchQueue.main.async {
                     // The images will be nil if safety checks were performed and found the result to be un-safe. `compactMap` removes nil elements from an array.
@@ -46,7 +57,7 @@ extension StableDiffusionPipeline: ImageGenerator {
 
 /// A dummy image generator that returns images from the app's asset catalog. Useful for testing on non-Apple Silicon devices.
 struct LocalImageGenerator: ImageGenerator {
-    func generateImagesForPrompt(prompt: String, imageCount: Int) async throws -> [CGImage] {
+    func generateImagesForPrompt(prompt: String, imageCount: Int = 1, delegate: ImageGeneratorDelegate? = nil) async throws -> [CGImage] {
         #if os(iOS)
         guard let image = UIImage(named: "sample-image")?.cgImage else {
             return []
