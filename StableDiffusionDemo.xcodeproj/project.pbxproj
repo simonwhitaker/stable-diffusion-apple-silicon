@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F414D8F029624424000391CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F414D8EF29624424000391CF /* Info.plist */; };
+		F44034FD296367DA00854DA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F44034FC296367DA00854DA8 /* README.md */; };
 		F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */; };
 		F4950A462960797400A1481F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A452960797400A1481F /* Assets.xcassets */; };
 		F4950A492960797400A1481F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A482960797400A1481F /* Preview Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		F414D8EF29624424000391CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43E4D892952F309003C6826 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		F44034FC296367DA00854DA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDesktopApp.swift; sourceTree = "<group>"; };
 		F4950A452960797400A1481F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		F4E282362949FA9F0086532F = {
 			isa = PBXGroup;
 			children = (
+				F44034FC296367DA00854DA8 /* README.md */,
 				F4950A402960797300A1481F /* StableDiffusionDesktop */,
 				F4E282402949FAA00086532F /* Products */,
 				F4950A54296079EE00A1481F /* Frameworks */,
@@ -171,6 +174,7 @@
 			files = (
 				F4950A492960797400A1481F /* Preview Assets.xcassets in Resources */,
 				F4950A462960797400A1481F /* Assets.xcassets in Resources */,
+				F44034FD296367DA00854DA8 /* README.md in Resources */,
 				F414D8F029624424000391CF /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
