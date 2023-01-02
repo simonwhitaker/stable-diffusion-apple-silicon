@@ -9,12 +9,12 @@ import AppleArchive
 import Combine
 import Foundation
 import System
+import ZIPFoundation
 
 let requiredFiles = [
 //    "SafetyChecker.mlmodelc",
     "TextEncoder.mlmodelc",
-    "UnetChunk1.mlmodelc",
-    "UnetChunk2.mlmodelc",
+    "Unet.mlmodelc",
     "VAEDecoder.mlmodelc",
     "merges.txt",
     "vocab.json"
@@ -30,7 +30,7 @@ final class ModelData: ObservableObject {
     let remoteModelsUrl: URL
 
     init() {
-        remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.aar")!
+        remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.zip")!
         hasCachedModels = getHasCachedModels()
         
         do {
@@ -83,7 +83,7 @@ final class ModelData: ObservableObject {
             do {
                 observation?.invalidate()
                 progress(1.0, .unpacking)
-                let _ = try self.unarchiveModels(aarFile: FilePath(localURL.path()))
+                let _ = try FileManager.default.unzipItem(at: localURL, to: self.localModelDirectoryUrl)
                 completion(localURL, nil)
             }
             catch {
