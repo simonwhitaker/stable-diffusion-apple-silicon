@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import ZIPFoundation
 
 let requiredFiles = [
 //    "SafetyChecker.mlmodelc",
@@ -27,7 +26,7 @@ final class ModelData: ObservableObject {
     let remoteModelsUrl: URL
 
     init() {
-        remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.zip")!
+        remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.aar")!
         hasCachedModels = getHasCachedModels()
         
         do {
@@ -80,7 +79,7 @@ final class ModelData: ObservableObject {
             do {
                 observation?.invalidate()
                 progress(1.0, .unpacking)
-                let _ = try FileManager.default.unzipItem(at: localURL, to: self.localModelDirectoryUrl)
+                let _ = try FileManager.default.unarchiveItems(at: localURL, to: self.localModelDirectoryUrl)
                 completion(localURL, nil)
             }
             catch {

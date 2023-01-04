@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F414D8F029624424000391CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F414D8EF29624424000391CF /* Info.plist */; };
 		F44034FD296367DA00854DA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F44034FC296367DA00854DA8 /* README.md */; };
-		F44035002963683800854DA8 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = F44034FF2963683800854DA8 /* ZIPFoundation */; };
 		F440350229636AA300854DA8 /* FileManager+AppleArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440350129636AA300854DA8 /* FileManager+AppleArchive.swift */; };
 		F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */; };
 		F4950A462960797400A1481F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A452960797400A1481F /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4950A56296079EE00A1481F /* StableDiffusion in Frameworks */,
-				F44035002963683800854DA8 /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +129,6 @@
 			name = StableDiffusionDesktop;
 			packageProductDependencies = (
 				F4950A55296079EE00A1481F /* StableDiffusion */,
-				F44034FF2963683800854DA8 /* ZIPFoundation */,
 			);
 			productName = StableDiffusionDesktop;
 			productReference = F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */;
@@ -163,7 +160,6 @@
 			mainGroup = F4E282362949FA9F0086532F;
 			packageReferences = (
 				F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */,
-				F44034FE2963683800854DA8 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
 			productRefGroup = F4E282402949FAA00086532F /* Products */;
 			projectDirPath = "";
@@ -411,22 +407,9 @@
 				minimumVersion = 0.1.0;
 			};
 		};
-		F44034FE2963683800854DA8 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.9;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F44034FF2963683800854DA8 /* ZIPFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F44034FE2963683800854DA8 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
-			productName = ZIPFoundation;
-		};
 		F4950A55296079EE00A1481F /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;

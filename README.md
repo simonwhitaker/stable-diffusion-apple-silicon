@@ -6,7 +6,7 @@ This repo contains a simple app for running Stable Diffusion natively on macOS.
 
 # Getting started
 
-The app expects to be able to download models at startup from http://localhost:8080/models.zip. This means you need to acquire the models, zip them, then host them locally. Here's how...
+The app expects to be able to download models at startup from http://localhost:8080/models.aar. This means you need to acquire the models, compress them using Apple Archive, then host them locally. Here's how...
 
 ## Acquiring the models
 
@@ -22,10 +22,10 @@ Either way, you should end up with a folder with these contents:
 - merges.txt
 - vocab.json
 
-To build the .zip model archive, `cd` to that directory and run:
+To build the .aar model archive, `cd` to that directory and run:
 
 ```command
-rm -f models.zip && zip -r models.zip *
+rm -f models.aar && aa archive -d . -o models.aar
 ```
 
 Now serve the models on localhost:8080 by running this command in the same directory:
