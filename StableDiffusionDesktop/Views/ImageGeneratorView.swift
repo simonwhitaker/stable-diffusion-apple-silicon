@@ -11,7 +11,7 @@ import StableDiffusion
 private let ImageSize: CGSize = CGSize(width: 512, height: 512)
 
 struct ImageGeneratorView: View, ImageGeneratorDelegate {
-    @State private var prompt: String = "A photo of a kitten on the moon"
+    @State private var prompt: String = "A high quality photo of a kitten on the moon"
     @State private var cgImage: CGImage? = nil
     @State private var generationTime: TimeInterval?
     @State private var step: Int = 0
