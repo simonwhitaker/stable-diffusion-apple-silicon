@@ -51,7 +51,7 @@ struct ImageGeneratorView: View, ImageGeneratorDelegate {
                     }
                 } label: {
                     Text("Go")
-                }
+                }.disabled(isGenerating)
             }
             
             ZStack {
