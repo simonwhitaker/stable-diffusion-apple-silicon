@@ -8,7 +8,7 @@
 import SwiftUI
 import StableDiffusion
 
-private let ImageSize: CGSize = CGSize(width: 300, height: 300)
+private let ImageSize: CGSize = CGSize(width: 512, height: 512)
 
 struct ImageGeneratorView: View, ImageGeneratorDelegate {
     @State private var prompt: String = "A photo of a kitten on the moon"
