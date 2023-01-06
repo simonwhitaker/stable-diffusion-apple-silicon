@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct LoadingModelsView: View {
+    @EnvironmentObject var modelData: ModelData
+
     var body: some View {
-        VStack {
+        VStack(spacing: 12.0) {
             Spacer()
             ProgressView {
                 Text("Waking the AI...")
             }
+            Text("\(modelData.localModelMetadata()?.version ?? "Unknown model version"), \(modelData.localModelMetadata()?.mlProgramOperationTypeHistogram.einsum ?? 0)")
+                .font(.caption2)
+                .foregroundColor(.secondary)
             Spacer()
         }
     }

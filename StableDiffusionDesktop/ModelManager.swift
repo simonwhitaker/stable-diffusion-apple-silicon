@@ -61,6 +61,22 @@ final class ModelData: ObservableObject {
         return true
     }
 
+    func localModelMetadata() -> ModelMetadata? {
+        let decoder = JSONDecoder()
+        let path = self.localModelDirectoryUrl.appending(path: "Unet.mlmodelc/metadata.json")
+
+        do {
+            let metadata = try Data(contentsOf: path)
+            let d = try decoder.decode([ModelMetadata].self, from: metadata)
+            if !d.isEmpty {
+                return d[0]
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
+
     func downloadModels(completion: @escaping (URL?, Error?) -> Void, progress: @escaping (Double, ModelDownloadStatus) -> Void) -> Void {
         print("Downloading \(remoteModelsUrl.lastPathComponent)")
         let request = URLRequest(url: remoteModelsUrl)
@@ -95,4 +111,15 @@ final class ModelData: ObservableObject {
 }
 
 
+struct MLProgramOperationTypeHistogram: Codable {
+    var einsum: Int?
 
+    enum CodingKeys: String, CodingKey {
+        case einsum = "Ios16.einsum"
+    }
+}
+
+struct ModelMetadata: Codable {
+    var version: String
+    var mlProgramOperationTypeHistogram: MLProgramOperationTypeHistogram
+}
