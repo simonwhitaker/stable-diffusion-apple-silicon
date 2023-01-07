@@ -22,7 +22,7 @@ struct ImageGeneratorView: View, ImageGeneratorDelegate {
         guard let cgImage = cgImage else {
             return nil
         }
-        return Image(cgImage, scale: 1.0, label: Text(verbatim: ""))
+        return Image(decorative: cgImage, scale: 1.0, orientation: .up)
     }
 
     var imageGenerator: ImageGenerator
