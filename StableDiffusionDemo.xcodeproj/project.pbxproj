@@ -21,6 +21,18 @@
 		F4950A52296079AC00A1481F /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
 		F4950A53296079AE00A1481F /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DFD52E295EE14300E2327D /* ImageGenerator.swift */; };
 		F4950A56296079EE00A1481F /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4950A55296079EE00A1481F /* StableDiffusion */; };
+		F4A5FE05296AED2F002CC2F1 /* StableDiffusionMobileApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A5FE04296AED2F002CC2F1 /* StableDiffusionMobileApp.swift */; };
+		F4A5FE09296AED30002CC2F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A5FE08296AED30002CC2F1 /* Assets.xcassets */; };
+		F4A5FE0C296AED30002CC2F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A5FE0B296AED30002CC2F1 /* Preview Assets.xcassets */; };
+		F4A5FE10296AED4E002CC2F1 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43E4D892952F309003C6826 /* ModelManager.swift */; };
+		F4A5FE11296AED52002CC2F1 /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44389C6296AC6DF0033934B /* Pipeline.swift */; };
+		F4A5FE12296AED52002CC2F1 /* ImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DFD52E295EE14300E2327D /* ImageGenerator.swift */; };
+		F4A5FE13296AED55002CC2F1 /* DownloadModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F9436F2951C6FC00D1D75C /* DownloadModelsView.swift */; };
+		F4A5FE14296AED55002CC2F1 /* ImageGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */; };
+		F4A5FE15296AED55002CC2F1 /* LoadingModelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADC028295D993200105E9D /* LoadingModelsView.swift */; };
+		F4A5FE16296AED55002CC2F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E282442949FAA00086532F /* ContentView.swift */; };
+		F4A5FE18296AED88002CC2F1 /* StableDiffusion in Frameworks */ = {isa = PBXBuildFile; productRef = F4A5FE17296AED88002CC2F1 /* StableDiffusion */; };
+		F4A5FE19296AEDFE002CC2F1 /* FileManager+AppleArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440350129636AA300854DA8 /* FileManager+AppleArchive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +46,11 @@
 		F4950A452960797400A1481F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4950A482960797400A1481F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F4950A4A2960797400A1481F /* StableDiffusionDesktop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StableDiffusionDesktop.entitlements; sourceTree = "<group>"; };
+		F4A5FE02296AED2F002CC2F1 /* StableDiffusionMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A5FE04296AED2F002CC2F1 /* StableDiffusionMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionMobileApp.swift; sourceTree = "<group>"; };
+		F4A5FE08296AED30002CC2F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4A5FE0B296AED30002CC2F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F4A5FE1A296AF8B6002CC2F1 /* StableDiffusionMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StableDiffusionMobile.entitlements; sourceTree = "<group>"; };
 		F4ADC028295D993200105E9D /* LoadingModelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModelsView.swift; sourceTree = "<group>"; };
 		F4ADC02A295DA09F00105E9D /* ImageGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGeneratorView.swift; sourceTree = "<group>"; };
 		F4DFD52E295EE14300E2327D /* ImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGenerator.swift; sourceTree = "<group>"; };
@@ -47,6 +64,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4950A56296079EE00A1481F /* StableDiffusion in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A5FDFF296AED2F002CC2F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5FE18296AED88002CC2F1 /* StableDiffusion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,11 +121,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F4A5FE03296AED2F002CC2F1 /* StableDiffusionMobile */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5FE1A296AF8B6002CC2F1 /* StableDiffusionMobile.entitlements */,
+				F4A5FE04296AED2F002CC2F1 /* StableDiffusionMobileApp.swift */,
+				F4A5FE08296AED30002CC2F1 /* Assets.xcassets */,
+				F4A5FE0A296AED30002CC2F1 /* Preview Content */,
+			);
+			path = StableDiffusionMobile;
+			sourceTree = "<group>";
+		};
+		F4A5FE0A296AED30002CC2F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F4A5FE0B296AED30002CC2F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F4E282362949FA9F0086532F = {
 			isa = PBXGroup;
 			children = (
 				F44034FC296367DA00854DA8 /* README.md */,
 				F4950A402960797300A1481F /* StableDiffusionDesktop */,
+				F4A5FE03296AED2F002CC2F1 /* StableDiffusionMobile */,
 				F4E282402949FAA00086532F /* Products */,
 				F4950A54296079EE00A1481F /* Frameworks */,
 			);
@@ -110,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */,
+				F4A5FE02296AED2F002CC2F1 /* StableDiffusionMobile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +183,26 @@
 			productReference = F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F4A5FE01296AED2F002CC2F1 /* StableDiffusionMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A5FE0D296AED30002CC2F1 /* Build configuration list for PBXNativeTarget "StableDiffusionMobile" */;
+			buildPhases = (
+				F4A5FDFE296AED2F002CC2F1 /* Sources */,
+				F4A5FDFF296AED2F002CC2F1 /* Frameworks */,
+				F4A5FE00296AED2F002CC2F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StableDiffusionMobile;
+			packageProductDependencies = (
+				F4A5FE17296AED88002CC2F1 /* StableDiffusion */,
+			);
+			productName = StableDiffusionMobile;
+			productReference = F4A5FE02296AED2F002CC2F1 /* StableDiffusionMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +214,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					F4950A3E2960797300A1481F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					F4A5FE01296AED2F002CC2F1 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -169,6 +238,7 @@
 			projectRoot = "";
 			targets = (
 				F4950A3E2960797300A1481F /* StableDiffusionDesktop */,
+				F4A5FE01296AED2F002CC2F1 /* StableDiffusionMobile */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +252,15 @@
 				F4950A462960797400A1481F /* Assets.xcassets in Resources */,
 				F44034FD296367DA00854DA8 /* README.md in Resources */,
 				F414D8F029624424000391CF /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A5FE00296AED2F002CC2F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5FE0C296AED30002CC2F1 /* Preview Assets.xcassets in Resources */,
+				F4A5FE09296AED30002CC2F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +280,22 @@
 				F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */,
 				F4950A50296079A700A1481F /* LoadingModelsView.swift in Sources */,
 				F4950A52296079AC00A1481F /* ModelManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4A5FDFE296AED2F002CC2F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A5FE15296AED55002CC2F1 /* LoadingModelsView.swift in Sources */,
+				F4A5FE14296AED55002CC2F1 /* ImageGeneratorView.swift in Sources */,
+				F4A5FE16296AED55002CC2F1 /* ContentView.swift in Sources */,
+				F4A5FE11296AED52002CC2F1 /* Pipeline.swift in Sources */,
+				F4A5FE12296AED52002CC2F1 /* ImageGenerator.swift in Sources */,
+				F4A5FE05296AED2F002CC2F1 /* StableDiffusionMobileApp.swift in Sources */,
+				F4A5FE10296AED4E002CC2F1 /* ModelManager.swift in Sources */,
+				F4A5FE13296AED55002CC2F1 /* DownloadModelsView.swift in Sources */,
+				F4A5FE19296AEDFE002CC2F1 /* FileManager+AppleArchive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +359,66 @@
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F4A5FE0E296AED30002CC2F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StableDiffusionMobile/StableDiffusionMobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StableDiffusionMobile/Preview Content\"";
+				DEVELOPMENT_TEAM = VW9QM42U4U;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4A5FE0F296AED30002CC2F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StableDiffusionMobile/StableDiffusionMobile.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StableDiffusionMobile/Preview Content\"";
+				DEVELOPMENT_TEAM = VW9QM42U4U;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.netcetera.StableDiffusionMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -393,6 +548,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F4A5FE0D296AED30002CC2F1 /* Build configuration list for PBXNativeTarget "StableDiffusionMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A5FE0E296AED30002CC2F1 /* Debug */,
+				F4A5FE0F296AED30002CC2F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F4E2823A2949FA9F0086532F /* Build configuration list for PBXProject "StableDiffusionDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -417,6 +581,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		F4950A55296079EE00A1481F /* StableDiffusion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
+			productName = StableDiffusion;
+		};
+		F4A5FE17296AED88002CC2F1 /* StableDiffusion */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4377892294FADAF000F81A8 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */;
 			productName = StableDiffusion;

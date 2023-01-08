@@ -7,18 +7,26 @@
 
 import Foundation
 
-let requiredFiles = [
+let coreRequiredFiles = [
 //    "SafetyChecker.mlmodelc",
     "TextEncoder.mlmodelc",
-    "Unet.mlmodelc",
     "VAEDecoder.mlmodelc",
     "merges.txt",
     "vocab.json"
 ]
 
+let requiredFilesIOs = coreRequiredFiles + ["UnetChunk1.mlmodelc", "UnetChunk2.mlmodelc"]
+let requiredFilesMacOS = coreRequiredFiles + ["Unet.mlmodelc"]
+
 enum ModelDownloadStatus {
     case none, downloading, unpacking
 }
+
+#if os(iOS) || targetEnvironment(simulator)
+let isRunningOnMac = false
+#else
+let isRunningOnMac = true
+#endif
 
 final class ModelData: ObservableObject {
     @Published var hasCachedModels: Bool = false
@@ -48,6 +56,7 @@ final class ModelData: ObservableObject {
             )
 
             let filenames = directoryContents.map { $0.lastPathComponent }
+            let requiredFiles = isRunningOnMac ? requiredFilesMacOS : requiredFilesIOs
             for f in requiredFiles {
                 if (filenames.firstIndex(of: f) == nil) {
                     print("\(f) is missing from the cache, need to download the models")
@@ -63,7 +72,7 @@ final class ModelData: ObservableObject {
 
     func localModelMetadata() -> ModelMetadata? {
         let decoder = JSONDecoder()
-        let path = self.localModelDirectoryUrl.appending(path: "Unet.mlmodelc/metadata.json")
+        let path = self.localModelDirectoryUrl.appending(path: "TextEncoder.mlmodelc/metadata.json")
 
         do {
             let metadata = try Data(contentsOf: path)

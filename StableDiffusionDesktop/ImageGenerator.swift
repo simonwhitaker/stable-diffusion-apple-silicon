@@ -5,9 +5,14 @@
 //  Created by Simon on 30/12/2022.
 //
 
-import AppKit
 import Foundation
 import StableDiffusion
+
+#if canImport(AppKit)
+import AppKit
+#else
+import UIKit
+#endif
 
 protocol ImageGeneratorDelegate {
     func didCompleteStep(step: Int, totalSteps: Int)
@@ -54,9 +59,16 @@ extension StableDiffusionPipeline: ImageGenerator {
 /// A dummy image generator that returns images from the app's asset catalog. Useful for testing on non-Apple Silicon devices.
 struct LocalImageGenerator: ImageGenerator {
     func generateImagesForPrompt(prompt: String, imageCount: Int = 1, delegate: ImageGeneratorDelegate? = nil) async throws -> [CGImage] {
+        #if canImport(AppKit)
         guard let image = NSImage(named: "sample-image")?.cgImage(forProposedRect: nil, context: .current, hints: nil) else {
             return []
         }
         return [image]
+        #else
+        guard let image = UIImage(named: "sample-image")?.cgImage else {
+            return []
+        }
+        return [image]
+        #endif
     }
 }
