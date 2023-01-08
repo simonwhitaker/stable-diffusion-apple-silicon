@@ -26,7 +26,7 @@ struct ImageGeneratorView: View, ImageGeneratorDelegate {
 
     var body: some View {
         GeometryReader { geometry in
-
+            let imageSize = min(geometry.size.width, geometry.size.height, 512)
             VStack {
                 HStack {
                     TextField("", text: $prompt)
@@ -63,7 +63,7 @@ struct ImageGeneratorView: View, ImageGeneratorDelegate {
                             .foregroundColor(Color(white: 0.2))
                             .font(.system(.largeTitle))
                     }
-                }.frame(width: min(geometry.size.width, geometry.size.height), height: min(geometry.size.width, geometry.size.height)).background(Color(white: 0.6))
+                }.frame(width: imageSize, height: imageSize).background(Color(white: 0.6))
 
                 if let image = image {
                     ShareLink(item: image, preview: SharePreview(prompt, image: image))
