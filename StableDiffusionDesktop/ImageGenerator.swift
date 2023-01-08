@@ -5,10 +5,9 @@
 //  Created by Simon on 30/12/2022.
 //
 
-import Foundation
-import CoreGraphics
-import StableDiffusion
 import AppKit
+import Foundation
+import StableDiffusion
 
 protocol ImageGeneratorDelegate {
     func didCompleteStep(step: Int, totalSteps: Int)

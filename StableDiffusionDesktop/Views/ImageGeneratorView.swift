@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import StableDiffusion
 
 private let ImageSize: CGSize = CGSize(width: 512, height: 512)
 
