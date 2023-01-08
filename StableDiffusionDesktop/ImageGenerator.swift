@@ -28,10 +28,9 @@ protocol ImageGenerator {
 extension StableDiffusionPipeline: ImageGenerator {
     func generateImagesForPrompt(prompt: String, imageCount: Int = 1, delegate: ImageGeneratorDelegate? = nil) async throws -> [CGImage] {
         do {
-            let seed = Int.random(in: 0...Int(UInt32.max)) // argument is an Int, but it gets cast to UInt32.
+            let seed = UInt32.random(in: 0...UInt32.max)
             let images = try self.generateImages(prompt:prompt, imageCount: imageCount, seed: seed, progressHandler: { progress in
                 DispatchQueue.main.async {
-                    
                     delegate?.didCompleteStep(step: progress.step, totalSteps: progress.stepCount)
                 }
                 return true
