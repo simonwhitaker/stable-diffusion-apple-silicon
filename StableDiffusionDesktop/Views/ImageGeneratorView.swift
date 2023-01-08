@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-private let ImageSize: CGSize = CGSize(width: 512, height: 512)
-
 struct ImageGeneratorView: View, ImageGeneratorDelegate {
     @State private var prompt: String = "A high quality photo of a kitten on the moon"
     @State private var cgImage: CGImage? = nil
@@ -27,55 +25,58 @@ struct ImageGeneratorView: View, ImageGeneratorDelegate {
     var imageGenerator: ImageGenerator
 
     var body: some View {
-        VStack {
-            HStack {
-                TextField("", text: $prompt)
-                    .textFieldStyle(.roundedBorder)
-                Button {
-                    Task {
-                        print("Generating image prompt: \"\(prompt)\"")
-                        let tStart = Date.now
-                        step = 0
-                        isGenerating = true
-                        defer {
-                            isGenerating = false
-                        }
-                        do {
-                            let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1, delegate: self)
-                            generationTime = Date.now.timeIntervalSince(tStart)
-                            cgImage = images.first!
-                        } catch {
-                            print("There was an error: \(error)")
-                        }
-                    }
-                } label: {
-                    Text("Go")
-                }.disabled(isGenerating)
-            }
-            
-            ZStack {
-                if let image = image {
-                    image
-                        .resizable()
-                        .scaledToFill()
-                } else {
-                    Image(systemName: "photo")
-                        .foregroundColor(Color(white: 0.2))
-                        .font(.system(.largeTitle))
-                }
-            }.frame(width: ImageSize.width, height: ImageSize.height).background(Color(white: 0.6))
+        GeometryReader { geometry in
 
-            if let image = image {
-                ShareLink(item: image, preview: SharePreview(prompt, image: image))
-            }
-            
-            // Status area
-            if isGenerating {
-                ProgressView(value: Float(step), total: Float(totalSteps)) {
-                    Text("Generating...").font(.caption)
+            VStack {
+                HStack {
+                    TextField("", text: $prompt)
+                        .textFieldStyle(.roundedBorder)
+                    Button {
+                        Task {
+                            print("Generating image prompt: \"\(prompt)\"")
+                            let tStart = Date.now
+                            step = 0
+                            isGenerating = true
+                            defer {
+                                isGenerating = false
+                            }
+                            do {
+                                let images = try await imageGenerator.generateImagesForPrompt(prompt: prompt, imageCount: 1, delegate: self)
+                                generationTime = Date.now.timeIntervalSince(tStart)
+                                cgImage = images.first!
+                            } catch {
+                                print("There was an error: \(error)")
+                            }
+                        }
+                    } label: {
+                        Text("Go")
+                    }.disabled(isGenerating)
                 }
-            } else if let generationTime = generationTime {
-                Text("Generation time: \(generationTime, specifier: "%.2f")s").font(.caption)
+
+                ZStack {
+                    if let image = image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    } else {
+                        Image(systemName: "photo")
+                            .foregroundColor(Color(white: 0.2))
+                            .font(.system(.largeTitle))
+                    }
+                }.frame(width: min(geometry.size.width, geometry.size.height), height: min(geometry.size.width, geometry.size.height)).background(Color(white: 0.6))
+
+                if let image = image {
+                    ShareLink(item: image, preview: SharePreview(prompt, image: image))
+                }
+
+                // Status area
+                if isGenerating {
+                    ProgressView(value: Float(step), total: Float(totalSteps)) {
+                        Text("Generating...").font(.caption)
+                    }
+                } else if let generationTime = generationTime {
+                    Text("Generation time: \(generationTime, specifier: "%.2f")s").font(.caption)
+                }
             }
         }
     }
