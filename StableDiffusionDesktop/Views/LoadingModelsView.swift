@@ -26,6 +26,6 @@ struct LoadingModelsView: View {
 
 struct LoadingModelsView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingModelsView()
+        LoadingModelsView().environmentObject(ModelData())
     }
 }
