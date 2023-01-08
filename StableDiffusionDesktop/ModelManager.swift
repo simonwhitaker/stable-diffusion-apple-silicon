@@ -34,7 +34,12 @@ final class ModelData: ObservableObject {
     let remoteModelsUrl: URL
 
     init() {
+#if os(iOS) && !targetEnvironment(simulator)
+        // TODO: replace this with a legit URL, rather than just an ephemeral HTTP server running on my laptop.
+        remoteModelsUrl = URL.init(string: "http://192.168.1.3/~simon/models/sd20_split_einsum.aar")!
+#else
         remoteModelsUrl = URL.init(string: "http://127.0.0.1:8080/models.aar")!
+#endif
         hasCachedModels = getHasCachedModels()
         
         do {
