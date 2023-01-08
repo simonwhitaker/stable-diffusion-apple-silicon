@@ -16,7 +16,7 @@ struct LoadingModelsView: View {
             ProgressView {
                 Text("Waking the AI...")
             }
-            Text("\(modelData.localModelMetadata()?.version ?? "Unknown model version"), \(modelData.localModelMetadata()?.mlProgramOperationTypeHistogram.einsum ?? 0)")
+            Text("\(modelData.localModelMetadata()?.version ?? "Unknown model version")")
                 .font(.caption2)
                 .foregroundColor(.secondary)
             Spacer()

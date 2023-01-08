@@ -110,16 +110,6 @@ final class ModelData: ObservableObject {
     }
 }
 
-
-struct MLProgramOperationTypeHistogram: Codable {
-    var einsum: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case einsum = "Ios16.einsum"
-    }
-}
-
 struct ModelMetadata: Codable {
     var version: String
-    var mlProgramOperationTypeHistogram: MLProgramOperationTypeHistogram
 }
