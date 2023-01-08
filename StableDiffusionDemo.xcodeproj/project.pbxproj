@@ -10,6 +10,7 @@
 		F414D8F029624424000391CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F414D8EF29624424000391CF /* Info.plist */; };
 		F44034FD296367DA00854DA8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F44034FC296367DA00854DA8 /* README.md */; };
 		F440350229636AA300854DA8 /* FileManager+AppleArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F440350129636AA300854DA8 /* FileManager+AppleArchive.swift */; };
+		F44389C7296AC6DF0033934B /* Pipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44389C6296AC6DF0033934B /* Pipeline.swift */; };
 		F4950A422960797300A1481F /* StableDiffusionDesktopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */; };
 		F4950A462960797400A1481F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A452960797400A1481F /* Assets.xcassets */; };
 		F4950A492960797400A1481F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4950A482960797400A1481F /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		F43E4D892952F309003C6826 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		F44034FC296367DA00854DA8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F440350129636AA300854DA8 /* FileManager+AppleArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+AppleArchive.swift"; sourceTree = "<group>"; };
+		F44389C6296AC6DF0033934B /* Pipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipeline.swift; sourceTree = "<group>"; };
 		F4950A3F2960797300A1481F /* StableDiffusionDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StableDiffusionDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableDiffusionDesktopApp.swift; sourceTree = "<group>"; };
 		F4950A452960797400A1481F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			children = (
 				F43E4D892952F309003C6826 /* ModelManager.swift */,
 				F4DFD52E295EE14300E2327D /* ImageGenerator.swift */,
+				F44389C6296AC6DF0033934B /* Pipeline.swift */,
 				F43E4D882952F2F8003C6826 /* Views */,
 				F414D8EF29624424000391CF /* Info.plist */,
 				F4950A412960797300A1481F /* StableDiffusionDesktopApp.swift */,
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F44389C7296AC6DF0033934B /* Pipeline.swift in Sources */,
 				F4950A51296079A900A1481F /* ImageGeneratorView.swift in Sources */,
 				F4950A4E2960799E00A1481F /* ContentView.swift in Sources */,
 				F4950A4F296079A400A1481F /* DownloadModelsView.swift in Sources */,

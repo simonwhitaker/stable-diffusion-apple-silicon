@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import StableDiffusion
-import CoreML
 
 struct ContentView: View {
     @State private var imageGenerator: ImageGenerator? = nil
@@ -19,19 +17,9 @@ struct ContentView: View {
                 DownloadModelsView()
             } else if imageGenerator == nil {
                 LoadingModelsView().onAppear {
-                    var _pipeline: StableDiffusionPipeline? = nil
-                    DispatchQueue.global().async {
+                    Task {
                         do {
-                            print("Loading pipeline...")
-
-                            // I'm seeing random errors on instantiating the pipeline and/or generating images that mention ANE. ANE is Apple Neural Engine. Setting a configuration with computeUnits of .cpuAndGPU prevents this code from running on the neural engine.
-                            let configuration = MLModelConfiguration()
-                            configuration.computeUnits = .cpuAndGPU
-
-                            _pipeline = try StableDiffusionPipeline(resourcesAt: modelData.localModelDirectoryUrl, configuration: configuration, disableSafety: true)
-                            DispatchQueue.main.async {
-                                imageGenerator = _pipeline
-                            }
+                            imageGenerator = try await getPipeline(resourceURL: modelData.localModelDirectoryUrl)
                         } catch {
                             print("Error loading pipeline: \(error)")
                         }
