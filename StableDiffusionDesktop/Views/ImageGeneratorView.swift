@@ -81,9 +81,10 @@ struct ImageGeneratorView: View, ImageGeneratorDelegate {
         }
     }
     
-    func didCompleteStep(step: Int, totalSteps: Int) {
+    func didCompleteStep(step: Int, totalSteps: Int, image: CGImage) {
         self.step = step
         self.totalSteps = totalSteps
+        self.cgImage = image
     }
 }
 

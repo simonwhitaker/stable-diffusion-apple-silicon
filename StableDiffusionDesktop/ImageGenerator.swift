@@ -15,7 +15,7 @@ import UIKit
 #endif
 
 protocol ImageGeneratorDelegate {
-    func didCompleteStep(step: Int, totalSteps: Int)
+    func didCompleteStep(step: Int, totalSteps: Int, image: CGImage)
 }
 
 /// A set of methods that define ways of generating images
@@ -36,7 +36,7 @@ extension StableDiffusionPipeline: ImageGenerator {
             let seed = UInt32.random(in: 0...UInt32.max)
             let images = try self.generateImages(prompt:prompt, imageCount: imageCount, seed: seed, progressHandler: { progress in
                 DispatchQueue.main.async {
-                    delegate?.didCompleteStep(step: progress.step, totalSteps: progress.stepCount)
+                    delegate?.didCompleteStep(step: progress.step, totalSteps: progress.stepCount, image: progress.currentImages[0]!)
                 }
                 return true
             })
